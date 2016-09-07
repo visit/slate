@@ -1,12 +1,12 @@
 ---
-title: API Reference
+title: CBIS API Reference
 
 language_tabs:
   - shell
   - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='https://support.citybreak.com/'>Citybreak Support</a> 
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -20,7 +20,7 @@ search: true
 Welcome to the CBIS REST API Reference.
 If you don't have an API key, visit <a href='https://support.citybreak.com/'>Citybreak Support</a> to get one.
 
-The API is divided into 2 parts, 'Raw' and 'Localized'. The first one is designed to get all the data we have about something, when the second one is designed to print data in real time.
+The API is divided into 2 parts, **Raw** and **Localized**. The first one is designed to get all the data we have about something, when the second one is designed to print data in real time.
 
 # Authentication
 
@@ -34,7 +34,7 @@ curl --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
 var r = fetch('https://cbis-rest-api.citybreak.com/v1/,
 {
     headers: {
-		'Authorization': 'Basic '+btoa('username:APIKEY132456789EWOK')
+		'Authorization': 'Basic ' + btoa('username:APIKEY132456789EWOK')
     }
   
 });
@@ -54,70 +54,121 @@ You must replace <code>APIKEY132456789EWOK</code> with your personal API key.
 
 # Raw Attribute
 
-All the attributes in use in CBIS for the organization owning the APIKEY, with your own translations as well.
+All the attributes in use in CBIS for the organization owning the API key, with your own translations as well.
+A Raw Attribute object looks like that:
+```json
+{
+  "Id": 102,
+  "Translations": {
+    "sv-SE": "Beskrivning",
+    "en-US": "Description",
+	...
+  },
+  "Name": "Description",
+  "Type": "String"
+}
+```
+
+## Get Attribute
+
+```shell
+curl -X GET 
+  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'Accept: application/json' 
+  'https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/{id}'
+```
+
+```javascript
+var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/{id}",
+{
+  headers: {
+    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "Accept": "application/json"
+  }  
+});
+```
+
+> Example of response:
+
+```json
+{
+  "Id": 102,
+  "Translations": {
+    "sv-SE": "Beskrivning",
+    "en-US": "Description",
+    "de-DE": "Beschreibung",
+    "da-DK": "Beskrivelse",
+    "nb-NO": "Description",
+    "fr-FR": "Description",
+    "es-ES": "Description",
+    "fi-FI": "Kuvaus",
+    "pl-PL": "Opis",
+    "en-GB": "Description"
+  },
+  "Name": "Description",
+  "Type": "String"
+}
+```
+
+Get a specific attribute and all its translations.
+
+### HTTP Request
+
+`GET https://cbis-rest-api.citybreak.com/v1/raw/attribute/{id}`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+id | The attribute id.
 
 ## Get Paged
 
 ```shell
 curl -X GET 
---header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
---header 'Accept: application/json' 
-'https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/getPaged/50'
+  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'Accept: application/json' 
+  'https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/getpaged/{pageSize}'
 ```
 
 ```javascript
-var r = fetch('https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/getPaged/50,
+var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/getpaged/{pageSize}",
 {
-    headers: {
-		'Authorization': 'Basic '+btoa('username:APIKEY132456789EWOK'),
-		'Accept': 'application/json'
-    }  
+  headers: {
+    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "Accept": "application/json"
+  }  
 });
 ```
 
-> The above command returns JSON structured like this:
+> Example of response:
 
 ```json
 {
-  "ContinueToken": "c2NhbjsxOzY3NzQ1NzUxOmp3dldQd215UU1Hc3p5NHVVTXZJMkE7MTt0b3RhbF9oaXRzOjI4NzQ7",
+  "ContinueToken": "c2NhbjsxOzY4MDQwODYxOkM2a0hnTFpmUUVLeHNlSUhoc0d5clE7MTt0b3RhbF9oaXRzOjI4NzQ7",
   "TotalResults": 2874,
   "Result": [
     {
-      "Id": 100001,
-      "Names": {
-        "0": "Food/Fun",
-        "1": "Mat & Nöje",
-        "2": "Food/Fun",
-        "3": "Food/Fun",
-        "4": "Mad/Sjov",
-        "5": "Mat og moro",
-        "6": "Food/Fun",
-        "9": "Food/Fun",
-        "13": "Gastronomia/ Rozrywka",
-        "21": "Food/Fun"
+      "Id": 100566,
+      "Translations": {
+        "sv-SE": "Bowling",
+        "en-US": "Bowling"
       },
-      "Name": "foodnfun",
+      "Name": "bowling",
       "Type": "Boolean"
     },
     {
-      "Id": 100002,
-      "Names": {
-        "0": "Sun/Beaches",
-        "1": "Sol & Stränder",
-        "2": "Sun/Beaches",
-        "3": "Sun/Beaches",
-        "5": "Sun/Beaches",
-        "6": "Sun/Beaches",
-        "9": "Sun/Beaches",
-        "13": "Słońce/ plaża",
-        "21": "Sunshine/Beaches"
+      "Id": 100567,
+      "Translations": {
+        "sv-SE": "Cykel till förfogande",
+        "en-US": "Bikes available"
       },
-      "Name": "sunandbeaches",
+      "Name": "cykel",
       "Type": "Boolean"
     },
 	...
   ]
-}
+ }
 ```
 
 Get a page of Raw Attributes.
@@ -132,61 +183,129 @@ Parameter | Default | Description
 --------- | ------- | -----------
 pageSize | none | Should be a page size lower than 50 and greater than 0.
 
+
 <aside class="notice">
-Use the ContinueToken to get the next page.
+Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to grab the next page until you get an empty result set.
 </aside>
 
 ## Continue
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
 ```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
+curl -X GET 
+  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'Accept: application/json' 
+  'https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/getnext/{continueToken}'
 ```
 
 ```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/getnext/{continueToken}",
+{
+  headers: {
+    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "Accept": "application/json"
+  }  
+});
 ```
 
-> The above command returns JSON structured like this:
+> Example of response:
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
+  "ContinueToken": "c2NhbjsxOzY4MDQwODYxOkM2a0hnTFpmUUVLeHNlSUhoc0d5clE7MTt0b3RhbF9oaXRzOjI4NzQ7",
+  "TotalResults": 2874,
+  "Result": [
+    {
+      "Id": 100566,
+      "Translations": {
+        "sv-SE": "Bowling",
+        "en-US": "Bowling"
+      },
+      "Name": "bowling",
+      "Type": "Boolean"
+    },
+    {
+      "Id": 100567,
+      "Translations": {
+        "sv-SE": "Cykel till förfogande",
+        "en-US": "Bikes available"
+      },
+      "Name": "cykel",
+      "Type": "Boolean"
+    },
+	...
+  ]
+ }
 ```
 
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+Get the next page of Raw Attributes, you need to provide a token obtained from <a href="https://bqk-.github.io/slate/#get-paged">Get Paged</a>.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET https://cbis-rest-api.citybreak.com/v1/raw/attribute/getnext/{continueToken}`
 
-### URL Parameters
+### Query Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to retrieve
+continueToken | A token to retrieve the next page.
 
+
+<aside class="notice">
+Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to grab the next page until you get an **empty** result set.
+</aside>
+
+## Search Attribute
+
+```shell
+curl -X GET 
+  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'Accept: application/json' 
+  'https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/search/{search}'
+```
+
+```javascript
+var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/search/{search}",
+{
+  headers: {
+    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "Accept": "application/json"
+  }  
+});
+```
+
+> Example of response:
+
+```json
+[
+  {
+    "Id": 100691,
+    "Translations": {
+      "sv-SE": "Pentry/Kokvrå",
+      "en-US": "Kitchenette"
+    },
+    "Name": "PentryKokvra",
+    "Type": "Boolean"
+  },
+  {
+    "Id": 100265,
+    "Translations": {
+      "sv-SE": "Pentry",
+      "en-US": "Kitchenette"
+    },
+    "Name": "pentry",
+    "Type": "Boolean"
+  }
+]
+```
+
+Get a specific attribute and all its translations.
+
+### HTTP Request
+
+`GET https://cbis-rest-api.citybreak.com/v1/raw/attribute/search/{search}`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+search | The string you are looking for.
