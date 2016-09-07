@@ -128,11 +128,10 @@ If you don&rsquo;t have an API key, visit <a href='https://support.citybreak.com
 <h1 id="authentication">Authentication</h1>
 
 <blockquote>
-<p>To authorize, you will need to use basic authentication.
-<code class="prettyprint">shell
-curl --header &#39;Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw==&#39;
-</code></p>
+<p>To authorize, you will need to use basic authentication.</p>
 </blockquote>
+<pre class="highlight shell"><code>curl --header <span class="s1">'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='</span>
+</code></pre>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://cbis-rest-api.citybreak.com/v1/api"</span><span class="p">,</span>
 <span class="p">{</span>
     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
@@ -158,20 +157,19 @@ You must replace <code>APIKEY132456789EWOK</code> with your personal API key.
 <h1 id="raw-attribute">Raw Attribute</h1>
 
 <blockquote>
-<p>Raw Attribute 
-<code class="prettyprint">json
-{
-  &quot;Id&quot;: 102,
-  &quot;Translations&quot;: {
-    &quot;sv-SE&quot;: &quot;Beskrivning&quot;,
-    &quot;en-US&quot;: &quot;Description&quot;,
-    ...
-  },
-  &quot;Name&quot;: &quot;Description&quot;,
-  &quot;Type&quot;: &quot;String&quot;
-}
-</code></p>
+<p>Raw Attribute </p>
 </blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beskrivning"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Description"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="err">}</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Description"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <p>All the attributes in use in CBIS for the organization owning the API key, with your own translations as well.</p>
 
@@ -191,27 +189,26 @@ You must replace <code>APIKEY132456789EWOK</code> with your personal API key.
 </code></pre>
 
 <blockquote>
-<p>Example of response:
-<code class="prettyprint">json
-{
-  &quot;Id&quot;: 102,
-  &quot;Translations&quot;: {
-    &quot;sv-SE&quot;: &quot;Beskrivning&quot;,
-    &quot;en-US&quot;: &quot;Description&quot;,
-    &quot;de-DE&quot;: &quot;Beschreibung&quot;,
-    &quot;da-DK&quot;: &quot;Beskrivelse&quot;,
-    &quot;nb-NO&quot;: &quot;Description&quot;,
-    &quot;fr-FR&quot;: &quot;Description&quot;,
-    &quot;es-ES&quot;: &quot;Description&quot;,
-    &quot;fi-FI&quot;: &quot;Kuvaus&quot;,
-    &quot;pl-PL&quot;: &quot;Opis&quot;,
-    &quot;en-GB&quot;: &quot;Description&quot;
-  },
-  &quot;Name&quot;: &quot;Description&quot;,
-  &quot;Type&quot;: &quot;String&quot;
-}
-</code></p>
+<p>Example of response:</p>
 </blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beskrivning"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Description"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"de-DE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beschreibung"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"da-DK"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beskrivelse"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"nb-NO"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Description"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"fr-FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Description"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"es-ES"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Description"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"fi-FI"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kuvaus"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"pl-PL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Opis"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"en-GB"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Description"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Description"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <p>Get a specific attribute and all its translations.</p>
 
@@ -249,35 +246,34 @@ You must replace <code>APIKEY132456789EWOK</code> with your personal API key.
 </code></pre>
 
 <blockquote>
-<p>Example of response:
-<code class="prettyprint">json
-{
-  &quot;ContinueToken&quot;: &quot;c2NhbjsxOzY4MDQwODYxOkM2a0hnTFpmUUVLeHNlSUhoc0d5clE7MTt0b3RhbF9oaXRzOjI4NzQ7&quot;,
-  &quot;TotalResults&quot;: 2874,
-  &quot;Result&quot;: [
-    {
-      &quot;Id&quot;: 100566,
-      &quot;Translations&quot;: {
-        &quot;sv-SE&quot;: &quot;Bowling&quot;,
-        &quot;en-US&quot;: &quot;Bowling&quot;
-      },
-      &quot;Name&quot;: &quot;bowling&quot;,
-      &quot;Type&quot;: &quot;Boolean&quot;
-    },
-    {
-      &quot;Id&quot;: 100567,
-      &quot;Translations&quot;: {
-        &quot;sv-SE&quot;: &quot;Cykel till förfogande&quot;,
-        &quot;en-US&quot;: &quot;Bikes available&quot;
-      },
-      &quot;Name&quot;: &quot;cykel&quot;,
-      &quot;Type&quot;: &quot;Boolean&quot;
-    },
-    ...
-  ]
- }
-</code></p>
+<p>Example of response:</p>
 </blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"ContinueToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c2NhbjsxOzY4MDQwODYxOkM2a0hnTFpmUUVLeHNlSUhoc0d5clE7MTt0b3RhbF9oaXRzOjI4NzQ7"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"TotalResults"</span><span class="p">:</span><span class="w"> </span><span class="mi">2874</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100566</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bowling"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bowling"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bowling"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boolean"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100567</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cykel till förfogande"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bikes available"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cykel"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boolean"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <p>Get a page of Raw Attributes.</p>
 
@@ -319,35 +315,34 @@ Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to gr
 </code></pre>
 
 <blockquote>
-<p>Example of response:
-<code class="prettyprint">json
-{
-  &quot;ContinueToken&quot;: &quot;c2NhbjsxOzY4MDQwODYxOkM2a0hnTFpmUUVLeHNlSUhoc0d5clE7MTt0b3RhbF9oaXRzOjI4NzQ7&quot;,
-  &quot;TotalResults&quot;: 2874,
-  &quot;Result&quot;: [
-    {
-      &quot;Id&quot;: 100566,
-      &quot;Translations&quot;: {
-        &quot;sv-SE&quot;: &quot;Bowling&quot;,
-        &quot;en-US&quot;: &quot;Bowling&quot;
-      },
-      &quot;Name&quot;: &quot;bowling&quot;,
-      &quot;Type&quot;: &quot;Boolean&quot;
-    },
-    {
-      &quot;Id&quot;: 100567,
-      &quot;Translations&quot;: {
-        &quot;sv-SE&quot;: &quot;Cykel till förfogande&quot;,
-        &quot;en-US&quot;: &quot;Bikes available&quot;
-      },
-      &quot;Name&quot;: &quot;cykel&quot;,
-      &quot;Type&quot;: &quot;Boolean&quot;
-    },
-    ...
-  ]
- }
-</code></p>
+<p>Example of response:</p>
 </blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"ContinueToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c2NhbjsxOzY4MDQwODYxOkM2a0hnTFpmUUVLeHNlSUhoc0d5clE7MTt0b3RhbF9oaXRzOjI4NzQ7"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"TotalResults"</span><span class="p">:</span><span class="w"> </span><span class="mi">2874</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100566</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bowling"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bowling"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bowling"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boolean"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100567</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cykel till förfogande"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bikes available"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cykel"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boolean"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <p>Get the next page of Raw Attributes, you need to provide a token obtained from <a href="https://bqk-.github.io/slate/#get-paged">Get Paged</a>.</p>
 
@@ -389,30 +384,29 @@ Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to gr
 </code></pre>
 
 <blockquote>
-<p>Example of response:
-<code class="prettyprint">json
-[
-  {
-    &quot;Id&quot;: 100691,
-    &quot;Translations&quot;: {
-      &quot;sv-SE&quot;: &quot;Pentry/Kokvrå&quot;,
-      &quot;en-US&quot;: &quot;Kitchenette&quot;
-    },
-    &quot;Name&quot;: &quot;PentryKokvra&quot;,
-    &quot;Type&quot;: &quot;Boolean&quot;
-  },
-  {
-    &quot;Id&quot;: 100265,
-    &quot;Translations&quot;: {
-      &quot;sv-SE&quot;: &quot;Pentry&quot;,
-      &quot;en-US&quot;: &quot;Kitchenette&quot;
-    },
-    &quot;Name&quot;: &quot;pentry&quot;,
-    &quot;Type&quot;: &quot;Boolean&quot;
-  }
-]
-</code></p>
+<p>Example of response:</p>
 </blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100691</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pentry/Kokvrå"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kitchenette"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PentryKokvra"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boolean"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100265</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pentry"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kitchenette"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pentry"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boolean"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
 
 <p>Search for a match or more in Attributes translations.</p>
 
@@ -437,21 +431,20 @@ Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to gr
 <h1 id="raw-poi">Raw POI</h1>
 
 <blockquote>
-<p>Raw POI
-<code class="prettyprint">json
-{
-  &quot;Id&quot;: 16,
-  &quot;Name&quot;: &quot;Leksand&quot;,
-  &quot;Translation&quot;: {
-    &quot;sv-SE&quot;: &quot;Leksand&quot;
-  },
-  &quot;Position&quot;: {
-    &quot;Longitude&quot;: 15.0032043457031,
-    &quot;Latitude&quot;: 60.7338905334473
-  }
-}
-</code></p>
+<p>Raw POI</p>
 </blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Leksand"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Translation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Leksand"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"Position"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"Longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.0032043457031</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">60.7338905334473</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <p>All the POI in use in CBIS for the organization owning the API key, with your own translations as well.</p>
 
@@ -471,21 +464,20 @@ Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to gr
 </code></pre>
 
 <blockquote>
-<p>Example of response:
-<code class="prettyprint">json
-{
-  &quot;Id&quot;: 16,
-  &quot;Name&quot;: &quot;Leksand&quot;,
-  &quot;Translation&quot;: {
-    &quot;sv-SE&quot;: &quot;Leksand&quot;
-  },
-  &quot;Position&quot;: {
-    &quot;Longitude&quot;: 15.0032043457031,
-    &quot;Latitude&quot;: 60.7338905334473
-  }
-}
-</code></p>
+<p>Example of response:</p>
 </blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Leksand"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Translation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Leksand"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"Position"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"Longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.0032043457031</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">60.7338905334473</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <p>Get a specific POI and all its translations.</p>
 
@@ -523,35 +515,34 @@ Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to gr
 </code></pre>
 
 <blockquote>
-<p>Example of response:
-<code class="prettyprint">json
-{
-  &quot;ContinueToken&quot;: &quot;c2NhbjsxOzY4MDQwODYxOkM2a0hnTFpmUUVLeHNlSUhoc0d5clE7MTt0b3RhbF9oaXRzOjI4NzQ7&quot;,
-  &quot;TotalResults&quot;: 2874,
-  &quot;Result&quot;: [
-    {
-      &quot;Id&quot;: 100566,
-      &quot;Translations&quot;: {
-        &quot;sv-SE&quot;: &quot;Bowling&quot;,
-        &quot;en-US&quot;: &quot;Bowling&quot;
-      },
-      &quot;Name&quot;: &quot;bowling&quot;,
-      &quot;Type&quot;: &quot;Boolean&quot;
-    },
-    {
-      &quot;Id&quot;: 100567,
-      &quot;Translations&quot;: {
-        &quot;sv-SE&quot;: &quot;Cykel till förfogande&quot;,
-        &quot;en-US&quot;: &quot;Bikes available&quot;
-      },
-      &quot;Name&quot;: &quot;cykel&quot;,
-      &quot;Type&quot;: &quot;Boolean&quot;
-    },
-    ...
-  ]
-}
-</code></p>
+<p>Example of response:</p>
 </blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"ContinueToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c2NhbjsxOzY4MDQwODYxOkM2a0hnTFpmUUVLeHNlSUhoc0d5clE7MTt0b3RhbF9oaXRzOjI4NzQ7"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"TotalResults"</span><span class="p">:</span><span class="w"> </span><span class="mi">2874</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100566</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bowling"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bowling"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bowling"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boolean"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100567</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cykel till förfogande"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bikes available"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cykel"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boolean"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <p>Get a page of Raw POIs.</p>
 
@@ -593,50 +584,49 @@ Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to gr
 </code></pre>
 
 <blockquote>
-<p>Example of response:
-<code class="prettyprint">json
-{
-  &quot;ContinueToken&quot;: &quot;c2NhbjswOzE7dG90YWxfaGl0czo2Ow==&quot;,
-  &quot;TotalResults&quot;: 6,
-  &quot;Result&quot;: [
-    {
-      &quot;Id&quot;: 18,
-      &quot;Name&quot;: &quot;Borlänge (Dala Airport)&quot;,
-      &quot;Translation&quot;: {
-        &quot;sv-SE&quot;: &quot;Borlänge (Dala Airport)&quot;
-      },
-      &quot;Position&quot;: {
-        &quot;Longitude&quot;: 15.5104637145996,
-        &quot;Latitude&quot;: 60.4233436584473
-      }
-    },
-    {
-      &quot;Id&quot;: 8133,
-      &quot;Name&quot;: &quot;WEQWEQWEQWE&quot;,
-      &quot;Translation&quot;: {
-        &quot;en-US&quot;: &quot;WEQWEQWEQWE&quot;
-      },
-      &quot;Position&quot;: {
-        &quot;Longitude&quot;: 15.2551183700562,
-        &quot;Latitude&quot;: 54.5259628295898
-      }
-    },
-    {
-      &quot;Id&quot;: 8305,
-      &quot;Name&quot;: &quot;Inlandsbanan&quot;,
-      &quot;Translation&quot;: {
-        &quot;sv-SE&quot;: &quot;Inlandsbanan&quot;
-      },
-      &quot;Position&quot;: {
-        &quot;Longitude&quot;: 16.2033634185791,
-        &quot;Latitude&quot;: 64.113899230957
-      }
-    }
-    ...
-  ]
-}
-</code></p>
+<p>Example of response:</p>
 </blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"ContinueToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c2NhbjswOzE7dG90YWxfaGl0czo2Ow=="</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"TotalResults"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Borlänge (Dala Airport)"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Borlänge (Dala Airport)"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"Position"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"Longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.5104637145996</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"Latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">60.4233436584473</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8133</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WEQWEQWEQWE"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WEQWEQWEQWE"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"Position"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"Longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.2551183700562</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"Latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">54.5259628295898</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8305</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Inlandsbanan"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Inlandsbanan"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"Position"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"Longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">16.2033634185791</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"Latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.113899230957</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <p>Get the next page of Raw POIs, you need to provide a token obtained from <a href="https://bqk-.github.io/slate/#get-paged">Get Paged</a>.</p>
 
@@ -678,23 +668,22 @@ Use the <a href="https://bqk-.github.io/slate/#continue10">ContinueToken</a> to 
 </code></pre>
 
 <blockquote>
-<p>Example of response:
-<code class="prettyprint">json
-[
-  {
-    &quot;Id&quot;: 18,
-    &quot;Name&quot;: &quot;Borlänge (Dala Airport)&quot;,
-    &quot;Translation&quot;: {
-      &quot;sv-SE&quot;: &quot;Borlänge (Dala Airport)&quot;
-    },
-    &quot;Position&quot;: {
-      &quot;Longitude&quot;: 15.5104637145996,
-      &quot;Latitude&quot;: 60.4233436584473
-    }
-  }
-]
-</code></p>
+<p>Example of response:</p>
 </blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Borlänge (Dala Airport)"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Translation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Borlänge (Dala Airport)"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"Position"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.5104637145996</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">60.4233436584473</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
 
 <p>Search for a match or more in POIs translations.</p>
 
