@@ -184,7 +184,7 @@ pageSize | Should be a page size lower than 50 and greater than 0.
 
 
 <aside class="notice">
-Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+Use the <a href="#continue">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
 </aside>
 
 ## Continue
@@ -236,7 +236,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/getnext/
  }
 ```
 
-Get the next page of Raw Attributes, you need to provide a token obtained from <a href="https://bqk-.github.io/slate/#get-paged">Get Paged</a>.
+Get the next page of Raw Attributes, you need to provide a token obtained from <a href="#get-paged">Get Paged</a>.
 
 ### HTTP Request
 
@@ -250,7 +250,7 @@ continueToken | A token to retrieve the next page.
 
 
 <aside class="notice">
-Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+Use the <a href="#continue">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
 </aside>
 
 ## Search Attribute
@@ -337,7 +337,7 @@ search | The string you are looking for.
 }
 ```
 
-All the POI in use in CBIS for the organization owning the API key, with your own translations as well.
+All the POIs in use in CBIS for the organization owning the API key, with your own translations as well.
 
 ## Get POI
 
@@ -449,7 +449,7 @@ pageSize | Should be a page size lower than 50 and greater than 0.
 
 
 <aside class="notice">
-Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+Use the <a href="#continue10">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
 </aside>
 
 ## Continue
@@ -516,7 +516,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/poi/getnext/{conti
 }
 ```
 
-Get the next page of Raw POIs, you need to provide a token obtained from <a href="https://bqk-.github.io/slate/#get-paged">Get Paged</a>.
+Get the next page of Raw POIs, you need to provide a token obtained from <a href="#get-paged9">Get Paged</a>.
 
 ### HTTP Request
 
@@ -530,7 +530,7 @@ continueToken | A token to retrieve the next page.
 
 
 <aside class="notice">
-Use the <a href="https://bqk-.github.io/slate/#continue10">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+Use the <a href="#continue10">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
 </aside>
 
 ## Search POIs
@@ -575,6 +575,307 @@ Search for a match or more in POIs translations.
 ### HTTP Request
 
 `GET https://cbis-rest-api.citybreak.com/v1/raw/poi/search/{search}`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+search | The string you are looking for.
+
+
+
+
+
+
+
+
+
+
+
+# Raw geo
+
+> Raw geo
+
+```json
+{
+  "Id": 83745,
+  "Name": "Göteborg",
+  "Translations": {
+    "sv-SE": "Göteborg",
+    "en-US": "Gothenburg",
+    "es-ES": "Gotemburgo"
+  },
+  "Path": [
+    4852,
+    105375,
+    83745
+  ]
+}
+```
+
+All the geos in use in CBIS for the organization owning the API key, with your own translations as well.
+
+## Get geo
+
+```shell
+curl -X GET 
+  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'Accept: application/json' 
+  'https://cbis-rest-api.citybreak.com/v1/api/raw/geo/{id}'
+```
+
+```javascript
+var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/geo/{id}",
+{
+  headers: {
+    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "Accept": "application/json"
+  }  
+});
+```
+
+> Example of response:
+
+```json
+{
+  "Id": 83745,
+  "Name": "Göteborg",
+  "Translations": {
+    "sv-SE": "Göteborg",
+    "en-US": "Gothenburg",
+    "es-ES": "Gotemburgo"
+  },
+  "Path": [
+    4852,
+    105375,
+    83745
+  ]
+}
+```
+
+Get a specific geo and all its translations.
+
+### HTTP Request
+
+`GET https://cbis-rest-api.citybreak.com/v1/api/raw/geo/{id}`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+id | The geo id.
+
+## Get Paged
+
+```shell
+curl -X GET 
+  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'Accept: application/json' 
+  'https://cbis-rest-api.citybreak.com/v1/api/raw/geo/getpaged/{pageSize}'
+```
+
+```javascript
+var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/geo/getpaged/{pageSize}",
+{
+  headers: {
+    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "Accept": "application/json"
+  }  
+});
+```
+
+> Example of response:
+
+```json
+{
+  "ContinueToken": "c2NhbjswOzE7dG90YWxfaGl0czo2Ow==",
+  "TotalResults": 6,
+  "Result": [
+    {
+      "Id": 4852,
+      "Name": "[Visit Group]",
+      "Translations": {},
+      "Path": [
+        4852
+      ]
+    },
+    {
+      "Id": 105375,
+      "Name": "Sverige",
+      "Translations": {
+        "sv-SE": "Sverige",
+        "en-US": "Sweden",
+        "es-ES": "Suecia"
+      },
+      "Path": [
+        4852,
+        105375
+      ]
+    },
+    {
+      "Id": 83745,
+      "Name": "Göteborg",
+      "Translations": {
+        "sv-SE": "Göteborg",
+        "en-US": "Gothenburg",
+        "es-ES": "Gotemburgo"
+      },
+      "Path": [
+        4852,
+        105375,
+        83745
+      ]
+    },
+	...
+  ]
+}
+```
+
+Get a page of Raw geos.
+
+### HTTP Request
+
+`GET https://cbis-rest-api.citybreak.com/v1/api/raw/geo/getpaged/{pageSize}`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+pageSize | Should be a page size lower than 50 and greater than 0.
+
+
+<aside class="notice">
+Use the <a href="#continue10">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+</aside>
+
+## Continue
+
+```shell
+curl -X GET 
+  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'Accept: application/json' 
+  'https://cbis-rest-api.citybreak.com/v1/api/raw/geo/getnext/{continueToken}'
+```
+
+```javascript
+var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/geo/getnext/{continueToken}",
+{
+  headers: {
+    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "Accept": "application/json"
+  }  
+});
+```
+
+> Example of response:
+
+```json
+{
+  "ContinueToken": "c2NhbjswOzE7dG90YWxfaGl0czo2Ow==",
+  "TotalResults": 6,
+  "Result": [
+    {
+      "Id": 4852,
+      "Name": "[Visit Group]",
+      "Translations": {},
+      "Path": [
+        4852
+      ]
+    },
+    {
+      "Id": 105375,
+      "Name": "Sverige",
+      "Translations": {
+        "sv-SE": "Sverige",
+        "en-US": "Sweden",
+        "es-ES": "Suecia"
+      },
+      "Path": [
+        4852,
+        105375
+      ]
+    },
+    {
+      "Id": 83745,
+      "Name": "Göteborg",
+      "Translations": {
+        "sv-SE": "Göteborg",
+        "en-US": "Gothenburg",
+        "es-ES": "Gotemburgo"
+      },
+      "Path": [
+        4852,
+        105375,
+        83745
+      ]
+    },
+	...
+  ]
+}
+```
+
+Get the next page of Raw geos, you need to provide a token obtained from <a href="#get-paged">Get Paged</a>.
+
+### HTTP Request
+
+`GET https://cbis-rest-api.citybreak.com/v1/raw/geo/getnext/{continueToken}`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+continueToken | A token to retrieve the next page.
+
+
+<aside class="notice">
+Use the <a href="#continue10">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+</aside>
+
+## Search geos
+
+```shell
+curl -X GET 
+  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'Accept: application/json' 
+  'https://cbis-rest-api.citybreak.com/v1/api/raw/geo/search/{search}'
+```
+
+```javascript
+var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/geo/search/{search}",
+{
+  headers: {
+    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "Accept": "application/json"
+  }  
+});
+```
+
+> Example of response:
+
+```json
+[
+  {
+    "Id": 83745,
+    "Name": "Göteborg",
+    "Translations": {
+      "sv-SE": "Göteborg",
+	  "en-US": "Gothenburg",
+	  "es-ES": "Gotemburgo"
+    },
+    "Path": [
+	  4852,
+	  105375,
+	  83745
+    ]
+  }
+]
+```
+
+Search for a match or more in geos translations.
+
+### HTTP Request
+
+`GET https://cbis-rest-api.citybreak.com/v1/raw/geo/search/{search}`
 
 ### Query Parameters
 
