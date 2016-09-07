@@ -123,7 +123,7 @@
 <p>Welcome to the CBIS REST API Reference.
 If you don&rsquo;t have an API key, visit <a href='https://support.citybreak.com/'>Citybreak Support</a> to get one.</p>
 
-<p>The API is divided into 2 parts, <strong>Raw</strong> and <strong>Localized</strong>. The first one is designed to get all the data we have about something, when the second one is designed to print data in real time.</p>
+<p>The API is divided into 2 parts, <strong>raw</strong> and <strong>Localized</strong>. The first one is designed to get all the data we have about something, when the second one is designed to print data in real time.</p>
 
 <h1 id="authentication">Authentication</h1>
 
@@ -163,9 +163,8 @@ You must replace <code>APIKEY132456789EWOK</code> with your personal API key.
   </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="p">,</span><span class="w">
   </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beskrivning"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Description"</span><span class="p">,</span><span class="w">
-    </span><span class="err">...</span><span class="w">
-  </span><span class="err">}</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Description"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
   </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Description"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -269,13 +268,12 @@ You must replace <code>APIKEY132456789EWOK</code> with your personal API key.
       </span><span class="p">},</span><span class="w">
       </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cykel"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boolean"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
  </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>Get a page of Raw Attributes.</p>
+<p>Get a page of raw attributes.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -296,7 +294,7 @@ You must replace <code>APIKEY132456789EWOK</code> with your personal API key.
 </tbody></table>
 
 <aside class="notice">
-Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+Use the <a href="#continue">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
 </aside>
 
 <h2 id="continue">Continue</h2>
@@ -338,13 +336,12 @@ Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to gr
       </span><span class="p">},</span><span class="w">
       </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cykel"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boolean"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
  </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>Get the next page of Raw Attributes, you need to provide a token obtained from <a href="https://bqk-.github.io/slate/#get-paged">Get Paged</a>.</p>
+<p>Get the next page of raw attributes, you need to provide a token obtained from <a href="#get-paged">Get Paged</a>.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -365,10 +362,10 @@ Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to gr
 </tbody></table>
 
 <aside class="notice">
-Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+Use the <a href="#continue">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
 </aside>
 
-<h2 id="search-attribute">Search Attribute</h2>
+<h2 id="search-attributes">Search Attributes</h2>
 <pre class="highlight shell"><code>curl -X GET 
   --header <span class="s1">'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='</span>
   --header <span class="s1">'Accept: application/json'</span> 
@@ -408,7 +405,7 @@ Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to gr
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 
-<p>Search for a match or more in Attributes translations.</p>
+<p>Search for a match or more in attributes translations.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -446,7 +443,7 @@ Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to gr
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>All the POI in use in CBIS for the organization owning the API key, with your own translations as well.</p>
+<p>All the POIs in use in CBIS for the organization owning the API key, with your own translations as well.</p>
 
 <h2 id="get-poi">Get POI</h2>
 <pre class="highlight shell"><code>curl -X GET 
@@ -538,13 +535,12 @@ Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to gr
       </span><span class="p">},</span><span class="w">
       </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cykel"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boolean"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>Get a page of Raw POIs.</p>
+<p>Get a page of raw POIs.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -565,7 +561,7 @@ Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to gr
 </tbody></table>
 
 <aside class="notice">
-Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+Use the <a href="#continue10">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
 </aside>
 
 <h2 id="continue">Continue</h2>
@@ -623,12 +619,11 @@ Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to gr
         </span><span class="nt">"Latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.113899230957</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
-    </span><span class="err">...</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>Get the next page of Raw POIs, you need to provide a token obtained from <a href="https://bqk-.github.io/slate/#get-paged">Get Paged</a>.</p>
+<p>Get the next page of raw POIs, you need to provide a token obtained from <a href="#get-paged9">Get Paged</a>.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -649,7 +644,7 @@ Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to gr
 </tbody></table>
 
 <aside class="notice">
-Use the <a href="https://bqk-.github.io/slate/#continue10">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+Use the <a href="#continue10">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
 </aside>
 
 <h2 id="search-pois">Search POIs</h2>
@@ -690,6 +685,612 @@ Use the <a href="https://bqk-.github.io/slate/#continue10">ContinueToken</a> to 
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">GET https://cbis-rest-api.citybreak.com/v1/raw/poi/search/{search}</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>search</td>
+<td>The string you are looking for.</td>
+</tr>
+</tbody></table>
+
+<h1 id="raw-geo">Raw Geo</h1>
+
+<blockquote>
+<p>Raw Geo</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">83745</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Göteborg"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Göteborg"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gothenburg"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"es-ES"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gotemburgo"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"Path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="mi">4852</span><span class="p">,</span><span class="w">
+    </span><span class="mi">105375</span><span class="p">,</span><span class="w">
+    </span><span class="mi">83745</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>All the geos in use in CBIS for the organization owning the API key, with your own translations as well.</p>
+
+<h2 id="get-geo">Get Geo</h2>
+<pre class="highlight shell"><code>curl -X GET 
+  --header <span class="s1">'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='</span>
+  --header <span class="s1">'Accept: application/json'</span> 
+  <span class="s1">'https://cbis-rest-api.citybreak.com/v1/api/raw/geo/{id}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://cbis-rest-api.citybreak.com/v1/api/raw/geo/{id}"</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Basic "</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">"username:APIKEY132456789EWOK"</span><span class="p">),</span>
+    <span class="s2">"Accept"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">}</span>  
+<span class="p">});</span>
+</code></pre>
+
+<blockquote>
+<p>Example of response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">83745</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Göteborg"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Göteborg"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gothenburg"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"es-ES"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gotemburgo"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"Path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="mi">4852</span><span class="p">,</span><span class="w">
+    </span><span class="mi">105375</span><span class="p">,</span><span class="w">
+    </span><span class="mi">83745</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Get a specific geo and all its translations.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://cbis-rest-api.citybreak.com/v1/api/raw/geo/{id}</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The geo id.</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-paged">Get Paged</h2>
+<pre class="highlight shell"><code>curl -X GET 
+  --header <span class="s1">'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='</span>
+  --header <span class="s1">'Accept: application/json'</span> 
+  <span class="s1">'https://cbis-rest-api.citybreak.com/v1/api/raw/geo/getpaged/{pageSize}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://cbis-rest-api.citybreak.com/v1/api/raw/geo/getpaged/{pageSize}"</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Basic "</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">"username:APIKEY132456789EWOK"</span><span class="p">),</span>
+    <span class="s2">"Accept"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">}</span>  
+<span class="p">});</span>
+</code></pre>
+
+<blockquote>
+<p>Example of response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"ContinueToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c2NhbjswOzE7dG90YWxfaGl0czo2Ow=="</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"TotalResults"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4852</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[Visit Group]"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nt">"Path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">4852</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">105375</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sverige"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sverige"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sweden"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"es-ES"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Suecia"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"Path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">4852</span><span class="p">,</span><span class="w">
+        </span><span class="mi">105375</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">83745</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Göteborg"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Göteborg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gothenburg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"es-ES"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gotemburgo"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"Path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">4852</span><span class="p">,</span><span class="w">
+        </span><span class="mi">105375</span><span class="p">,</span><span class="w">
+        </span><span class="mi">83745</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Get a page of raw geos.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://cbis-rest-api.citybreak.com/v1/api/raw/geo/getpaged/{pageSize}</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pageSize</td>
+<td>Should be a page size lower than 50 and greater than 0.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Use the <a href="#continue10">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+</aside>
+
+<h2 id="continue">Continue</h2>
+<pre class="highlight shell"><code>curl -X GET 
+  --header <span class="s1">'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='</span>
+  --header <span class="s1">'Accept: application/json'</span> 
+  <span class="s1">'https://cbis-rest-api.citybreak.com/v1/api/raw/geo/getnext/{continueToken}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://cbis-rest-api.citybreak.com/v1/api/raw/geo/getnext/{continueToken}"</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Basic "</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">"username:APIKEY132456789EWOK"</span><span class="p">),</span>
+    <span class="s2">"Accept"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">}</span>  
+<span class="p">});</span>
+</code></pre>
+
+<blockquote>
+<p>Example of response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"ContinueToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c2NhbjswOzE7dG90YWxfaGl0czo2Ow=="</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"TotalResults"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4852</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[Visit Group]"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nt">"Path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">4852</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">105375</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sverige"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sverige"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sweden"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"es-ES"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Suecia"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"Path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">4852</span><span class="p">,</span><span class="w">
+        </span><span class="mi">105375</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">83745</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Göteborg"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Göteborg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gothenburg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"es-ES"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gotemburgo"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"Path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">4852</span><span class="p">,</span><span class="w">
+        </span><span class="mi">105375</span><span class="p">,</span><span class="w">
+        </span><span class="mi">83745</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Get the next page of raw geos, you need to provide a token obtained from <a href="#get-paged">Get Paged</a>.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://cbis-rest-api.citybreak.com/v1/raw/geo/getnext/{continueToken}</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>continueToken</td>
+<td>A token to retrieve the next page.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Use the <a href="#continue10">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+</aside>
+
+<h2 id="search-geos">Search Geos</h2>
+<pre class="highlight shell"><code>curl -X GET 
+  --header <span class="s1">'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='</span>
+  --header <span class="s1">'Accept: application/json'</span> 
+  <span class="s1">'https://cbis-rest-api.citybreak.com/v1/api/raw/geo/search/{search}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://cbis-rest-api.citybreak.com/v1/api/raw/geo/search/{search}"</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Basic "</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">"username:APIKEY132456789EWOK"</span><span class="p">),</span>
+    <span class="s2">"Accept"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">}</span>  
+<span class="p">});</span>
+</code></pre>
+
+<blockquote>
+<p>Example of response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">83745</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Göteborg"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Göteborg"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gothenburg"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"es-ES"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gotemburgo"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"Path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="mi">4852</span><span class="p">,</span><span class="w">
+      </span><span class="mi">105375</span><span class="p">,</span><span class="w">
+      </span><span class="mi">83745</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+
+<p>Search for a match or more in geos translations.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://cbis-rest-api.citybreak.com/v1/raw/geo/search/{search}</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>search</td>
+<td>The string you are looking for.</td>
+</tr>
+</tbody></table>
+
+<h1 id="raw-category">Raw Category</h1>
+
+<blockquote>
+<p>Raw Category</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">30701</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thibault"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thibault"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thibault"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"Path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="mi">5946</span><span class="p">,</span><span class="w">
+    </span><span class="mi">30701</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>All the categories in use in CBIS for the organization owning the API key, with your own translations as well.</p>
+
+<h2 id="get-category">Get Category</h2>
+<pre class="highlight shell"><code>curl -X GET 
+  --header <span class="s1">'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='</span>
+  --header <span class="s1">'Accept: application/json'</span> 
+  <span class="s1">'https://cbis-rest-api.citybreak.com/v1/api/raw/category/{id}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://cbis-rest-api.citybreak.com/v1/api/raw/category/{id}"</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Basic "</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">"username:APIKEY132456789EWOK"</span><span class="p">),</span>
+    <span class="s2">"Accept"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">}</span>  
+<span class="p">});</span>
+</code></pre>
+
+<blockquote>
+<p>Example of response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">83745</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Göteborg"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Göteborg"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gothenburg"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"es-ES"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gotemburgo"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"Path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="mi">4852</span><span class="p">,</span><span class="w">
+    </span><span class="mi">105375</span><span class="p">,</span><span class="w">
+    </span><span class="mi">83745</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Get a specific category and all its translations.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://cbis-rest-api.citybreak.com/v1/api/raw/category/{id}</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The category id.</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-paged">Get Paged</h2>
+<pre class="highlight shell"><code>curl -X GET 
+  --header <span class="s1">'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='</span>
+  --header <span class="s1">'Accept: application/json'</span> 
+  <span class="s1">'https://cbis-rest-api.citybreak.com/v1/api/raw/category/getpaged/{pageSize}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://cbis-rest-api.citybreak.com/v1/api/raw/category/getpaged/{pageSize}"</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Basic "</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">"username:APIKEY132456789EWOK"</span><span class="p">),</span>
+    <span class="s2">"Accept"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">}</span>  
+<span class="p">});</span>
+</code></pre>
+
+<blockquote>
+<p>Example of response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"ContinueToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c2NhbjswOzE7dG90YWxfaGl0czo2Ow=="</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"TotalResults"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4852</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[Visit Group]"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nt">"Path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">4852</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">105375</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sverige"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sverige"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sweden"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"es-ES"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Suecia"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"Path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">4852</span><span class="p">,</span><span class="w">
+        </span><span class="mi">105375</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">83745</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Göteborg"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Göteborg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gothenburg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"es-ES"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gotemburgo"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"Path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">4852</span><span class="p">,</span><span class="w">
+        </span><span class="mi">105375</span><span class="p">,</span><span class="w">
+        </span><span class="mi">83745</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Get a page of raw categories.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://cbis-rest-api.citybreak.com/v1/api/raw/category/getpaged/{pageSize}</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pageSize</td>
+<td>Should be a page size lower than 50 and greater than 0.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Use the <a href="#continue15">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+</aside>
+
+<h2 id="continue">Continue</h2>
+<pre class="highlight shell"><code>curl -X GET 
+  --header <span class="s1">'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='</span>
+  --header <span class="s1">'Accept: application/json'</span> 
+  <span class="s1">'https://cbis-rest-api.citybreak.com/v1/api/raw/category/getnext/{continueToken}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://cbis-rest-api.citybreak.com/v1/api/raw/category/getnext/{continueToken}"</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Basic "</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">"username:APIKEY132456789EWOK"</span><span class="p">),</span>
+    <span class="s2">"Accept"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">}</span>  
+<span class="p">});</span>
+</code></pre>
+
+<blockquote>
+<p>Example of response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"ContinueToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c2NhbjswOzE7dG90YWxfaGl0czoxMTs="</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"TotalResults"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5946</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit Group"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit Group"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit Group"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"es-ES"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visit Group"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"Path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">5946</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">26210</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boende"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boende"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boende"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"es-ES"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hospedaje"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"Path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">5946</span><span class="p">,</span><span class="w">
+        </span><span class="mi">26210</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">26219</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b&amp;b"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b&amp;b"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b&amp;b"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"es-ES"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B&amp;B"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"Path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">5946</span><span class="p">,</span><span class="w">
+        </span><span class="mi">26210</span><span class="p">,</span><span class="w">
+        </span><span class="mi">26219</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Get the next page of raw categories, you need to provide a token obtained from <a href="#get-paged">Get Paged</a>.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://cbis-rest-api.citybreak.com/v1/raw/category/getnext/{continueToken}</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>continueToken</td>
+<td>A token to retrieve the next page.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Use the <a href="#continue10">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+</aside>
+
+<h2 id="search-categories">Search Categories</h2>
+<pre class="highlight shell"><code>curl -X GET 
+  --header <span class="s1">'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='</span>
+  --header <span class="s1">'Accept: application/json'</span> 
+  <span class="s1">'https://cbis-rest-api.citybreak.com/v1/api/raw/category/search/{search}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://cbis-rest-api.citybreak.com/v1/api/raw/category/search/{search}"</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Basic "</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">"username:APIKEY132456789EWOK"</span><span class="p">),</span>
+    <span class="s2">"Accept"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">}</span>  
+<span class="p">});</span>
+</code></pre>
+
+<blockquote>
+<p>Example of response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">30701</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thibault"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thibault"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thibault"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"Path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="mi">5946</span><span class="p">,</span><span class="w">
+      </span><span class="mi">30701</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+
+<p>Search for a match or more in categories translations.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://cbis-rest-api.citybreak.com/v1/raw/category/search/{search}</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
