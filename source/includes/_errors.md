@@ -8,5 +8,5 @@ Error Code | Meaning
 401 | Unauthorized -- Your API key is wrong, see <a href="https://bqk-.github.io/slate/#authentication">Authentication</a>
 404 | Not Found -- Could not find what you are looking for
 405 | Method Not Allowed -- Method not supported for this request
-500 | Internal Server Error -- Server trouble, try again later. If recurring, a href='https://support.citybreak.com/'>contact us</a>.
+500 | Internal Server Error -- Server trouble, try again later. If recurring, <a href="https://support.citybreak.com/">contact us</a>.
 503 | Service Unavailable -- Offline for maintanance. Please try again later.
