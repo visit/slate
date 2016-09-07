@@ -1220,7 +1220,14 @@ search | The string you are looking for.
     },
     {
       "Values": {
-        "en-US": "Ewoks were a diminutive species of furry bipeds native to the forest moon of Endor. They were most notable for helping the Rebel Alliance defeat the forces of the Galactic Empire at the Battle of Endor, allowing the shield generator there to be destroyed, and in turn, the Death Star II.\r\n\r\nEwoks were individuals that stood about one meter tall; they used spears, slings, and knives as weapons; they also used hang gliders as vehicles. Although skilled in forest survival and the construction of primitive technology, the Ewoks had yet to progress past stone-level technology when discovered by the Empire. They were quick learners, however, when exposed to advanced technology with simple mechanical processes and concepts."
+        "en-US": "Ewoks were a diminutive species of furry bipeds native to the forest moon of Endor. 
+		They were most notable for helping the Rebel Alliance defeat the forces of the Galactic Empire 
+		at the Battle of Endor, allowing the shield generator there to be destroyed, and in turn, the 
+		Death Star II.\r\n\r\nEwoks were individuals that stood about one meter tall; they used spears, 
+		slings, and knives as weapons; they also used hang gliders as vehicles. Although skilled in forest 
+		survival and the construction of primitive technology, the Ewoks had yet to progress past 
+		stone-level technology when discovered by the Empire. They were quick learners, however, 
+		when exposed to advanced technology with simple mechanical processes and concepts."
       },
       "AttributeId": 102,
       "Type": "String"
@@ -1323,7 +1330,14 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/product/{id}",
       },
       {
         "Values": {
-          "en-US": "Ewoks were a diminutive species of furry bipeds native to the forest moon of Endor. They were most notable for helping the Rebel Alliance defeat the forces of the Galactic Empire at the Battle of Endor, allowing the shield generator there to be destroyed, and in turn, the Death Star II.\r\n\r\nEwoks were individuals that stood about one meter tall; they used spears, slings, and knives as weapons; they also used hang gliders as vehicles. Although skilled in forest survival and the construction of primitive technology, the Ewoks had yet to progress past stone-level technology when discovered by the Empire. They were quick learners, however, when exposed to advanced technology with simple mechanical processes and concepts."
+          "en-US": "Ewoks were a diminutive species of furry bipeds native to the forest moon of Endor. 
+		  They were most notable for helping the Rebel Alliance defeat the forces of the Galactic Empire 
+		  at the Battle of Endor, allowing the shield generator there to be destroyed, and in turn, the 
+		  Death Star II.\r\n\r\nEwoks were individuals that stood about one meter tall; they used spears, 
+		  slings, and knives as weapons; they also used hang gliders as vehicles. Although skilled in forest 
+		  survival and the construction of primitive technology, the Ewoks had yet to progress past 
+		  stone-level technology when discovered by the Empire. They were quick learners, however, when 
+		  exposed to advanced technology with simple mechanical processes and concepts."
         },
         "AttributeId": 102,
         "Type": "String"
@@ -1440,7 +1454,14 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/Product/getpaged/{
       },
       {
         "Values": {
-          "en-US": "Ewoks were a diminutive species of furry bipeds native to the forest moon of Endor. They were most notable for helping the Rebel Alliance defeat the forces of the Galactic Empire at the Battle of Endor, allowing the shield generator there to be destroyed, and in turn, the Death Star II.\r\n\r\nEwoks were individuals that stood about one meter tall; they used spears, slings, and knives as weapons; they also used hang gliders as vehicles. Although skilled in forest survival and the construction of primitive technology, the Ewoks had yet to progress past stone-level technology when discovered by the Empire. They were quick learners, however, when exposed to advanced technology with simple mechanical processes and concepts."
+          "en-US": "Ewoks were a diminutive species of furry bipeds native to the forest moon of Endor. 
+		  They were most notable for helping the Rebel Alliance defeat the forces of the Galactic Empire 
+		  at the Battle of Endor, allowing the shield generator there to be destroyed, and in turn, the 
+		  Death Star II.\r\n\r\nEwoks were individuals that stood about one meter tall; they used spears, 
+		  slings, and knives as weapons; they also used hang gliders as vehicles. Although skilled in forest 
+		  survival and the construction of primitive technology, the Ewoks had yet to progress past 
+		  stone-level technology when discovered by the Empire. They were quick learners, however, 
+		  when exposed to advanced technology with simple mechanical processes and concepts."
         },
         "AttributeId": 102,
         "Type": "String"
@@ -1563,7 +1584,14 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/product/getnext/{c
       },
       {
         "Values": {
-          "en-US": "Ewoks were a diminutive species of furry bipeds native to the forest moon of Endor. They were most notable for helping the Rebel Alliance defeat the forces of the Galactic Empire at the Battle of Endor, allowing the shield generator there to be destroyed, and in turn, the Death Star II.\r\n\r\nEwoks were individuals that stood about one meter tall; they used spears, slings, and knives as weapons; they also used hang gliders as vehicles. Although skilled in forest survival and the construction of primitive technology, the Ewoks had yet to progress past stone-level technology when discovered by the Empire. They were quick learners, however, when exposed to advanced technology with simple mechanical processes and concepts."
+          "en-US": "Ewoks were a diminutive species of furry bipeds native to the forest moon of Endor. 
+		  They were most notable for helping the Rebel Alliance defeat the forces of the Galactic Empire 
+		  at the Battle of Endor, allowing the shield generator there to be destroyed, and in turn, the 
+		  Death Star II.\r\n\r\nEwoks were individuals that stood about one meter tall; they used spears, 
+		  slings, and knives as weapons; they also used hang gliders as vehicles. Although skilled in forest 
+		  survival and the construction of primitive technology, the Ewoks had yet to progress past 
+		  stone-level technology when discovered by the Empire. They were quick learners, however, when 
+		  exposed to advanced technology with simple mechanical processes and concepts."
         },
         "AttributeId": 102,
         "Type": "String"
@@ -1680,7 +1708,14 @@ Use the <a href="https://bqk-.github.io/slate/#continue25">ContinueToken</a> to 
     },
     {
       "Values": {
-        "en-US": "Ewoks were a diminutive species of furry bipeds native to the forest moon of Endor. They were most notable for helping the Rebel Alliance defeat the forces of the Galactic Empire at the Battle of Endor, allowing the shield generator there to be destroyed, and in turn, the Death Star II.\r\n\r\nEwoks were individuals that stood about one meter tall; they used spears, slings, and knives as weapons; they also used hang gliders as vehicles. Although skilled in forest survival and the construction of primitive technology, the Ewoks had yet to progress past stone-level technology when discovered by the Empire. They were quick learners, however, when exposed to advanced technology with simple mechanical processes and concepts."
+        "en-US": "Ewoks were a diminutive species of furry bipeds native to the forest moon of Endor. 
+		They were most notable for helping the Rebel Alliance defeat the forces of the Galactic Empire 
+		at the Battle of Endor, allowing the shield generator there to be destroyed, and in turn, the 
+		Death Star II.\r\n\r\nEwoks were individuals that stood about one meter tall; they used spears, 
+		slings, and knives as weapons; they also used hang gliders as vehicles. Although skilled in forest 
+		survival and the construction of primitive technology, the Ewoks had yet to progress past 
+		stone-level technology when discovered by the Empire. They were quick learners, however, when 
+		exposed to advanced technology with simple mechanical processes and concepts."
       },
       "AttributeId": 102,
       "Type": "String"
@@ -1783,7 +1818,14 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/arena/{id}",
       },
       {
         "Values": {
-          "en-US": "Ewoks were a diminutive species of furry bipeds native to the forest moon of Endor. They were most notable for helping the Rebel Alliance defeat the forces of the Galactic Empire at the Battle of Endor, allowing the shield generator there to be destroyed, and in turn, the Death Star II.\r\n\r\nEwoks were individuals that stood about one meter tall; they used spears, slings, and knives as weapons; they also used hang gliders as vehicles. Although skilled in forest survival and the construction of primitive technology, the Ewoks had yet to progress past stone-level technology when discovered by the Empire. They were quick learners, however, when exposed to advanced technology with simple mechanical processes and concepts."
+          "en-US": "Ewoks were a diminutive species of furry bipeds native to the forest moon of Endor. 
+		  They were most notable for helping the Rebel Alliance defeat the forces of the Galactic Empire 
+		  at the Battle of Endor, allowing the shield generator there to be destroyed, and in turn, the 
+		  Death Star II.\r\n\r\nEwoks were individuals that stood about one meter tall; they used spears, 
+		  slings, and knives as weapons; they also used hang gliders as vehicles. Although skilled in forest 
+		  survival and the construction of primitive technology, the Ewoks had yet to progress past 
+		  stone-level technology when discovered by the Empire. They were quick learners, however, when 
+		  exposed to advanced technology with simple mechanical processes and concepts."
         },
         "AttributeId": 102,
         "Type": "String"
@@ -1900,7 +1942,14 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/Arena/getpaged/{pa
       },
       {
         "Values": {
-          "en-US": "Ewoks were a diminutive species of furry bipeds native to the forest moon of Endor. They were most notable for helping the Rebel Alliance defeat the forces of the Galactic Empire at the Battle of Endor, allowing the shield generator there to be destroyed, and in turn, the Death Star II.\r\n\r\nEwoks were individuals that stood about one meter tall; they used spears, slings, and knives as weapons; they also used hang gliders as vehicles. Although skilled in forest survival and the construction of primitive technology, the Ewoks had yet to progress past stone-level technology when discovered by the Empire. They were quick learners, however, when exposed to advanced technology with simple mechanical processes and concepts."
+          "en-US": "Ewoks were a diminutive species of furry bipeds native to the forest moon of Endor. 
+		  They were most notable for helping the Rebel Alliance defeat the forces of the Galactic Empire 
+		  at the Battle of Endor, allowing the shield generator there to be destroyed, and in turn, the 
+		  Death Star II.\r\n\r\nEwoks were individuals that stood about one meter tall; they used spears, 
+		  slings, and knives as weapons; they also used hang gliders as vehicles. Although skilled in forest 
+		  survival and the construction of primitive technology, the Ewoks had yet to progress past 
+		  stone-level technology when discovered by the Empire. They were quick learners, however, when 
+		  exposed to advanced technology with simple mechanical processes and concepts."
         },
         "AttributeId": 102,
         "Type": "String"
@@ -2023,7 +2072,14 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/arena/getnext/{con
       },
       {
         "Values": {
-          "en-US": "Ewoks were a diminutive species of furry bipeds native to the forest moon of Endor. They were most notable for helping the Rebel Alliance defeat the forces of the Galactic Empire at the Battle of Endor, allowing the shield generator there to be destroyed, and in turn, the Death Star II.\r\n\r\nEwoks were individuals that stood about one meter tall; they used spears, slings, and knives as weapons; they also used hang gliders as vehicles. Although skilled in forest survival and the construction of primitive technology, the Ewoks had yet to progress past stone-level technology when discovered by the Empire. They were quick learners, however, when exposed to advanced technology with simple mechanical processes and concepts."
+          "en-US": "Ewoks were a diminutive species of furry bipeds native to the forest moon of Endor. 
+		  They were most notable for helping the Rebel Alliance defeat the forces of the Galactic Empire 
+		  at the Battle of Endor, allowing the shield generator there to be destroyed, and in turn, the 
+		  Death Star II.\r\n\r\nEwoks were individuals that stood about one meter tall; they used spears, 
+		  slings, and knives as weapons; they also used hang gliders as vehicles. Although skilled in forest 
+		  survival and the construction of primitive technology, the Ewoks had yet to progress past 
+		  stone-level technology when discovered by the Empire. They were quick learners, however, when 
+		  exposed to advanced technology with simple mechanical processes and concepts."
         },
         "AttributeId": 102,
         "Type": "String"
