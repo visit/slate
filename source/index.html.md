@@ -178,9 +178,9 @@ Get a page of Raw Attributes.
 
 ### Query Parameters
 
-Parameter | Default | Description
+Parameter | Description
 --------- | ------- | -----------
-pageSize | none | Should be a page size lower than 50 and greater than 0.
+pageSize | Should be a page size lower than 50 and greater than 0.
 
 
 <aside class="notice">
@@ -441,9 +441,9 @@ Get a page of Raw POIs.
 
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-pageSize | none | Should be a page size lower than 50 and greater than 0.
+Parameter | Description
+--------- | -----------
+pageSize | Should be a page size lower than 50 and greater than 0.
 
 
 <aside class="notice">
@@ -528,7 +528,7 @@ continueToken | A token to retrieve the next page.
 
 
 <aside class="notice">
-Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+Use the <a href="https://bqk-.github.io/slate/#continue10">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
 </aside>
 
 ## Search POIs
