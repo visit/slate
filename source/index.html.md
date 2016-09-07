@@ -183,7 +183,7 @@ pageSize | Should be a page size lower than 50 and greater than 0.
 
 
 <aside class="notice">
-Use the <a href="#continue">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
 </aside>
 
 ## Continue
@@ -234,7 +234,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/getnext/
  }
 ```
 
-Get the next page of raw attributes, you need to provide a token obtained from <a href="#get-paged">Get Paged</a>.
+Get the next page of raw attributes, you need to provide a token obtained from <a href="https://bqk-.github.io/slate/#get-paged">Get Paged</a>.
 
 ### HTTP Request
 
@@ -248,7 +248,7 @@ continueToken | A token to retrieve the next page.
 
 
 <aside class="notice">
-Use the <a href="#continue">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
 </aside>
 
 ## Search Attributes
@@ -446,7 +446,7 @@ pageSize | Should be a page size lower than 50 and greater than 0.
 
 
 <aside class="notice">
-Use the <a href="#continue10">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+Use the <a href="https://bqk-.github.io/slate/#continue10">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
 </aside>
 
 ## Continue
@@ -512,7 +512,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/poi/getnext/{conti
 }
 ```
 
-Get the next page of raw POIs, you need to provide a token obtained from <a href="#get-paged9">Get Paged</a>.
+Get the next page of raw POIs, you need to provide a token obtained from <a href="https://bqk-.github.io/slate/#get-paged9">Get Paged</a>.
 
 ### HTTP Request
 
@@ -526,7 +526,7 @@ continueToken | A token to retrieve the next page.
 
 
 <aside class="notice">
-Use the <a href="#continue10">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+Use the <a href="https://bqk-.github.io/slate/#continue10">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
 </aside>
 
 ## Search POIs
@@ -740,7 +740,7 @@ pageSize | Should be a page size lower than 50 and greater than 0.
 
 
 <aside class="notice">
-Use the <a href="#continue10">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+Use the <a href="https://bqk-.github.io/slate/#continue15">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
 </aside>
 
 ## Continue
@@ -808,7 +808,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/geo/getnext/{conti
 }
 ```
 
-Get the next page of raw geos, you need to provide a token obtained from <a href="#get-paged">Get Paged</a>.
+Get the next page of raw geos, you need to provide a token obtained from <a href="https://bqk-.github.io/slate/#get-paged14">Get Paged</a>.
 
 ### HTTP Request
 
@@ -822,7 +822,7 @@ continueToken | A token to retrieve the next page.
 
 
 <aside class="notice">
-Use the <a href="#continue10">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+Use the <a href="https://bqk-.github.io/slate/#continue15">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
 </aside>
 
 ## Search Geos
@@ -1037,7 +1037,7 @@ pageSize | Should be a page size lower than 50 and greater than 0.
 
 
 <aside class="notice">
-Use the <a href="#continue15">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+Use the <a href="https://bqk-.github.io/slate/#continue20">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
 </aside>
 
 ## Continue
@@ -1109,7 +1109,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/category/getnext/{
 }
 ```
 
-Get the next page of raw categories, you need to provide a token obtained from <a href="#get-paged">Get Paged</a>.
+Get the next page of raw categories, you need to provide a token obtained from <a href="https://bqk-.github.io/slate/#get-paged19">Get Paged</a>.
 
 ### HTTP Request
 
@@ -1123,7 +1123,7 @@ continueToken | A token to retrieve the next page.
 
 
 <aside class="notice">
-Use the <a href="#continue10">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+Use the <a href="https://bqk-.github.io/slate/#continue20">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
 </aside>
 
 ## Search Categories
