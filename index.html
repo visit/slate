@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>CBIS API Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -111,7 +111,7 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
+            <li><a href='https://support.citybreak.com/'>Citybreak Support</a></li>
             <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -123,7 +123,7 @@
 <p>Welcome to the CBIS REST API Reference.
 If you don&rsquo;t have an API key, visit <a href='https://support.citybreak.com/'>Citybreak Support</a> to get one.</p>
 
-<p>The API is divided into 2 parts, &lsquo;Raw&rsquo; and &#39;Localized&rsquo;. The first one is designed to get all the data we have about something, when the second one is designed to print data in real time.</p>
+<p>The API is divided into 2 parts, <strong>Raw</strong> and <strong>Localized</strong>. The first one is designed to get all the data we have about something, when the second one is designed to print data in real time.</p>
 
 <h1 id="authentication">Authentication</h1>
 
@@ -135,7 +135,7 @@ If you don&rsquo;t have an API key, visit <a href='https://support.citybreak.com
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s1">'https://cbis-rest-api.citybreak.com/v1/,
 {
     headers: {
-        '</span><span class="nx">Authorization</span><span class="s1">': '</span><span class="nx">Basic</span> <span class="s1">'+btoa('</span><span class="nx">username</span><span class="err">:</span><span class="nx">APIKEY132456789EWOK</span><span class="err">'</span><span class="p">)</span>
+        '</span><span class="nx">Authorization</span><span class="s1">': '</span><span class="nx">Basic</span> <span class="s1">' + btoa('</span><span class="nx">username</span><span class="err">:</span><span class="nx">APIKEY132456789EWOK</span><span class="err">'</span><span class="p">)</span>
     <span class="p">}</span>
 
 <span class="p">});</span>
@@ -157,66 +157,121 @@ You must replace <code>APIKEY132456789EWOK</code> with your personal API key.
 
 <h1 id="raw-attribute">Raw Attribute</h1>
 
-<p>All the attributes in use in CBIS for the organization owning the APIKEY, with your own translations as well.</p>
-
-<h2 id="get-paged">Get Paged</h2>
-<pre class="highlight shell"><code>curl -X GET 
---header <span class="s1">'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='</span>
---header <span class="s1">'Accept: application/json'</span> 
-<span class="s1">'https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/getPaged/50'</span>
-</code></pre>
-<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s1">'https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/getPaged/50,
+<p>All the attributes in use in CBIS for the organization owning the API key, with your own translations as well.
+A Raw Attribute object looks like that:
+<code class="prettyprint">json
 {
-    headers: {
-        '</span><span class="nx">Authorization</span><span class="s1">': '</span><span class="nx">Basic</span> <span class="s1">'+btoa('</span><span class="nx">username</span><span class="err">:</span><span class="nx">APIKEY132456789EWOK</span><span class="s1">'),
-        '</span><span class="nx">Accept</span><span class="s1">': '</span><span class="nx">application</span><span class="o">/</span><span class="nx">json</span><span class="err">'</span>
-    <span class="p">}</span>  
+  &quot;Id&quot;: 102,
+  &quot;Translations&quot;: {
+    &quot;sv-SE&quot;: &quot;Beskrivning&quot;,
+    &quot;en-US&quot;: &quot;Description&quot;,
+    ...
+  },
+  &quot;Name&quot;: &quot;Description&quot;,
+  &quot;Type&quot;: &quot;String&quot;
+}
+</code></p>
+
+<h2 id="get-attribute">Get Attribute</h2>
+<pre class="highlight shell"><code>curl -X GET 
+  --header <span class="s1">'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='</span>
+  --header <span class="s1">'Accept: application/json'</span> 
+  <span class="s1">'https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/{id}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://cbis-rest-api.citybreak.com/v1/api/raw/{id}"</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Basic "</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">"username:APIKEY132456789EWOK"</span><span class="p">),</span>
+    <span class="s2">"Accept"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">}</span>  
 <span class="p">});</span>
 </code></pre>
 
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Example of response:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"ContinueToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c2NhbjsxOzY3NzQ1NzUxOmp3dldQd215UU1Hc3p5NHVVTXZJMkE7MTt0b3RhbF9oaXRzOjI4NzQ7"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beskrivning"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Description"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"de-DE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beschreibung"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"da-DK"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beskrivelse"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"nb-NO"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Description"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"fr-FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Description"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"es-ES"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Description"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"fi-FI"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kuvaus"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"pl-PL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Opis"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"en-GB"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Description"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Description"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Get a specific attribute and all its translations.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://cbis-rest-api.citybreak.com/v1/raw/attribute/{id}</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The attribute id.</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-paged">Get Paged</h2>
+<pre class="highlight shell"><code>curl -X GET 
+  --header <span class="s1">'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='</span>
+  --header <span class="s1">'Accept: application/json'</span> 
+  <span class="s1">'https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/getpaged/{pageSize}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://cbis-rest-api.citybreak.com/v1/api/raw/getpaged/{pageSize}"</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Basic "</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">"username:APIKEY132456789EWOK"</span><span class="p">),</span>
+    <span class="s2">"Accept"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">}</span>  
+<span class="p">});</span>
+</code></pre>
+
+<blockquote>
+<p>Example of response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"ContinueToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c2NhbjsxOzY4MDQwODYxOkM2a0hnTFpmUUVLeHNlSUhoc0d5clE7MTt0b3RhbF9oaXRzOjI4NzQ7"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"TotalResults"</span><span class="p">:</span><span class="w"> </span><span class="mi">2874</span><span class="p">,</span><span class="w">
   </span><span class="nt">"Result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100001</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"Names"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"0"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Food/Fun"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mat &amp; Nöje"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Food/Fun"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Food/Fun"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"4"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mad/Sjov"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"5"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mat og moro"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"6"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Food/Fun"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Food/Fun"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"13"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gastronomia/ Rozrywka"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"21"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Food/Fun"</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100566</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bowling"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bowling"</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foodnfun"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bowling"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boolean"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100002</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"Names"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"0"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sun/Beaches"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sol &amp; Stränder"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sun/Beaches"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sun/Beaches"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"5"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sun/Beaches"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"6"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sun/Beaches"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"9"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sun/Beaches"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"13"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Słońce/ plaża"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"21"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sunshine/Beaches"</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100567</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cykel till förfogande"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bikes available"</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sunandbeaches"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cykel"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boolean"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="err">...</span><span class="w">
   </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+ </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <p>Get a page of Raw Attributes.</p>
@@ -242,50 +297,61 @@ You must replace <code>APIKEY132456789EWOK</code> with your personal API key.
 </tbody></table>
 
 <aside class="notice">
-Use the ContinueToken to get the next page.
+Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to grab the next page until you get an empty result set.
 </aside>
 
 <h2 id="continue">Continue</h2>
-<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<pre class="highlight shell"><code>curl -X GET 
+  --header <span class="s1">'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='</span>
+  --header <span class="s1">'Accept: application/json'</span> 
+  <span class="s1">'https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/getnext/{continueToken}'</span>
 </code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre>
-<pre class="highlight javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://cbis-rest-api.citybreak.com/v1/api/raw/getnext/{continueToken}"</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Basic "</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">"username:APIKEY132456789EWOK"</span><span class="p">),</span>
+    <span class="s2">"Accept"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">}</span>  
+<span class="p">});</span>
 </code></pre>
 
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Example of response:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
+  </span><span class="nt">"ContinueToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c2NhbjsxOzY4MDQwODYxOkM2a0hnTFpmUUVLeHNlSUhoc0d5clE7MTt0b3RhbF9oaXRzOjI4NzQ7"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"TotalResults"</span><span class="p">:</span><span class="w"> </span><span class="mi">2874</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100566</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bowling"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bowling"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bowling"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boolean"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100567</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cykel till förfogande"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bikes available"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cykel"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boolean"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+ </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can&rsquo;t use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<p>Get the next page of Raw Attributes, you need to provide a token obtained from <a href="https://bqk-.github.io/slate/#get-paged">Get Paged</a>.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://example.com/kittens/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">GET https://cbis-rest-api.citybreak.com/v1/raw/attribute/getnext/{continueToken}</code></p>
 
-<h3 id="url-parameters">URL Parameters</h3>
+<h3 id="query-parameters">Query Parameters</h3>
 
 <table><thead>
 <tr>
@@ -294,8 +360,72 @@ Use the ContinueToken to get the next page.
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>continueToken</td>
+<td>A token to retrieve the next page.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to grab the next page until you get an **empty** result set.
+</aside>
+
+<h2 id="search-attribute">Search Attribute</h2>
+<pre class="highlight shell"><code>curl -X GET 
+  --header <span class="s1">'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='</span>
+  --header <span class="s1">'Accept: application/json'</span> 
+  <span class="s1">'https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/search/{search}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/search/{search}"</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Basic "</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">"username:APIKEY132456789EWOK"</span><span class="p">),</span>
+    <span class="s2">"Accept"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">}</span>  
+<span class="p">});</span>
+</code></pre>
+
+<blockquote>
+<p>Example of response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100691</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pentry/Kokvrå"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kitchenette"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PentryKokvra"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boolean"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100265</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Translations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"sv-SE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pentry"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"en-US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kitchenette"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pentry"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boolean"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+
+<p>Get a specific attribute and all its translations.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://cbis-rest-api.citybreak.com/v1/raw/attribute/search/{search}</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>search</td>
+<td>The string you are looking for.</td>
 </tr>
 </tbody></table>
 
