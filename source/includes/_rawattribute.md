@@ -107,7 +107,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/getpaged
     {
       "Id": 100567,
       "Translations": {
-        "sv-SE": "Cykel till förfogande",
+        "sv-SE": "Cykel till fÃ¶rfogande",
         "en-US": "Bikes available"
       },
       "Name": "cykel",
@@ -172,7 +172,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/getnext/
     {
       "Id": 100567,
       "Translations": {
-        "sv-SE": "Cykel till förfogande",
+        "sv-SE": "Cykel till fÃ¶rfogande",
         "en-US": "Bikes available"
       },
       "Name": "cykel",
@@ -225,7 +225,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/search/{
   {
     "Id": 100691,
     "Translations": {
-      "sv-SE": "Pentry/Kokvrå",
+      "sv-SE": "Pentry/KokvrÃ¥",
       "en-US": "Kitchenette"
     },
     "Name": "PentryKokvra",
