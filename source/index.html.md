@@ -59,8 +59,7 @@ You must replace <code>APIKEY132456789EWOK</code> with your personal API key.
   "Id": 102,
   "Translations": {
     "sv-SE": "Beskrivning",
-    "en-US": "Description",
-	...
+    "en-US": "Description"
   },
   "Name": "Description",
   "Type": "String"
