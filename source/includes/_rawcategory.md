@@ -43,9 +43,9 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/category/{id}",
 ```json
 {
   "Id": 83745,
-  "Name": "Göteborg",
+  "Name": "GÃ¶teborg",
   "Translations": {
-    "sv-SE": "Göteborg",
+    "sv-SE": "GÃ¶teborg",
     "en-US": "Gothenburg",
     "es-ES": "Gotemburgo"
   },
@@ -118,9 +118,9 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/category/getpaged/
     },
     {
       "Id": 83745,
-      "Name": "Göteborg",
+      "Name": "GÃ¶teborg",
       "Translations": {
-        "sv-SE": "Göteborg",
+        "sv-SE": "GÃ¶teborg",
         "en-US": "Gothenburg",
         "es-ES": "Gotemburgo"
       },

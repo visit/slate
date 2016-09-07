@@ -103,7 +103,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/poi/getpaged/{page
     {
       "Id": 100567,
       "Translations": {
-        "sv-SE": "Cykel till fˆrfogande",
+        "sv-SE": "Cykel till f√∂rfogande",
         "en-US": "Bikes available"
       },
       "Name": "cykel",
@@ -158,9 +158,9 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/poi/getnext/{conti
   "Result": [
     {
       "Id": 18,
-      "Name": "Borl‰nge (Dala Airport)",
+      "Name": "Borl√§nge (Dala Airport)",
       "Translation": {
-        "sv-SE": "Borl‰nge (Dala Airport)"
+        "sv-SE": "Borl√§nge (Dala Airport)"
       },
       "Position": {
         "Longitude": 15.5104637145996,
@@ -235,9 +235,9 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/poi/search/{search
 [
   {
     "Id": 18,
-    "Name": "Borl‰nge (Dala Airport)",
+    "Name": "Borl√§nge (Dala Airport)",
     "Translation": {
-      "sv-SE": "Borl‰nge (Dala Airport)"
+      "sv-SE": "Borl√§nge (Dala Airport)"
     },
     "Position": {
       "Longitude": 15.5104637145996,
