@@ -179,7 +179,7 @@ Get a page of Raw Attributes.
 ### Query Parameters
 
 Parameter | Description
---------- | ------- | -----------
+--------- | -----------
 pageSize | Should be a page size lower than 50 and greater than 0.
 
 
