@@ -3,8 +3,6 @@ title: API Reference
 
 language_tabs:
   - shell
-  - ruby
-  - python
   - javascript
 
 toc_footers:
@@ -19,121 +17,126 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the CBIS REST API Reference.
+If you don't have an API key, visit <a href='https://support.citybreak.com/'>Citybreak Support</a> to get one.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+The API is divided into 2 parts, 'Raw' and 'Localized'. The first one is designed to get all the data we have about something, when the second one is designed to print data in real time.
 
 # Authentication
 
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
+> To authorize, you will need to use basic authentication.
 
 ```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+curl --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
 ```
 
 ```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
+var r = fetch('https://cbis-rest-api.citybreak.com/v1/,
+{
+    headers: {
+		'Authorization': 'Basic '+btoa('username:APIKEY132456789EWOK')
+    }
+  
+});
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+> Make sure to replace `APIKEY132456789EWOK` with your API key.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+If you don't have an API key, visit <a href='https://support.citybreak.com/'>Citybreak Support</a> to get one.
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+CBIS REST API expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
-`Authorization: meowmeowmeow`
+`Authorization: Basic base64encode(APIKEY132456789EWOK)`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>APIKEY132456789EWOK</code> with your personal API key.
 </aside>
 
-# Kittens
+# Raw Attribute
 
-## Get All Kittens
+All the attributes in use in CBIS for the organization owning the APIKEY, with your own translations as well.
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+## Get Paged
 
 ```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
+curl -X GET 
+--header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+--header 'Accept: application/json' 
+'https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/getPaged/50'
 ```
 
 ```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+var r = fetch('https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/getPaged/50,
+{
+    headers: {
+		'Authorization': 'Basic '+btoa('username:APIKEY132456789EWOK'),
+		'Accept': 'application/json'
+    }  
+});
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+{
+  "ContinueToken": "c2NhbjsxOzY3NzQ1NzUxOmp3dldQd215UU1Hc3p5NHVVTXZJMkE7MTt0b3RhbF9oaXRzOjI4NzQ7",
+  "TotalResults": 2874,
+  "Result": [
+    {
+      "Id": 100001,
+      "Names": {
+        "0": "Food/Fun",
+        "1": "Mat & Nöje",
+        "2": "Food/Fun",
+        "3": "Food/Fun",
+        "4": "Mad/Sjov",
+        "5": "Mat og moro",
+        "6": "Food/Fun",
+        "9": "Food/Fun",
+        "13": "Gastronomia/ Rozrywka",
+        "21": "Food/Fun"
+      },
+      "Name": "foodnfun",
+      "Type": "Boolean"
+    },
+    {
+      "Id": 100002,
+      "Names": {
+        "0": "Sun/Beaches",
+        "1": "Sol & Stränder",
+        "2": "Sun/Beaches",
+        "3": "Sun/Beaches",
+        "5": "Sun/Beaches",
+        "6": "Sun/Beaches",
+        "9": "Sun/Beaches",
+        "13": "Słońce/ plaża",
+        "21": "Sunshine/Beaches"
+      },
+      "Name": "sunandbeaches",
+      "Type": "Boolean"
+    },
+	...
+  ]
+}
 ```
 
-This endpoint retrieves all kittens.
+Get a page of Raw Attributes.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET https://cbis-rest-api.citybreak.com/v1/raw/attribute/getpaged/{pageSize}`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+pageSize | none | Should be a page size lower than 50 and greater than 0.
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+<aside class="notice">
+Use the ContinueToken to get the next page.
 </aside>
 
-## Get a Specific Kitten
+## Continue
 
 ```ruby
 require 'kittn'
