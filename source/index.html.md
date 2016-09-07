@@ -25,7 +25,6 @@ The API is divided into 2 parts, **Raw** and **Localized**. The first one is des
 # Authentication
 
 > To authorize, you will need to use basic authentication.
-
 ```shell
 curl --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
 ```
@@ -38,7 +37,6 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api",
     }
 });
 ```
-
 > Make sure to replace `APIKEY132456789EWOK` with your API key.
 
 If you don't have an API key, visit <a href='https://support.citybreak.com/'>Citybreak Support</a> to get one.
@@ -53,8 +51,7 @@ You must replace <code>APIKEY132456789EWOK</code> with your personal API key.
 
 # Raw Attribute
 
-All the attributes in use in CBIS for the organization owning the API key, with your own translations as well.
-A Raw Attribute object looks like that:
+> Raw Attribute 
 ```json
 {
   "Id": 102,
@@ -67,6 +64,8 @@ A Raw Attribute object looks like that:
   "Type": "String"
 }
 ```
+
+All the attributes in use in CBIS for the organization owning the API key, with your own translations as well.
 
 ## Get Attribute
 
@@ -88,7 +87,6 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/{id}",
 ```
 
 > Example of response:
-
 ```json
 {
   "Id": 102,
@@ -141,7 +139,6 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/getpaged
 ```
 
 > Example of response:
-
 ```json
 {
   "ContinueToken": "c2NhbjsxOzY4MDQwODYxOkM2a0hnTFpmUUVLeHNlSUhoc0d5clE7MTt0b3RhbF9oaXRzOjI4NzQ7",
@@ -207,7 +204,6 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/getnext/
 ```
 
 > Example of response:
-
 ```json
 {
   "ContinueToken": "c2NhbjsxOzY4MDQwODYxOkM2a0hnTFpmUUVLeHNlSUhoc0d5clE7MTt0b3RhbF9oaXRzOjI4NzQ7",
@@ -273,7 +269,6 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/search/{
 ```
 
 > Example of response:
-
 ```json
 [
   {
@@ -321,8 +316,7 @@ search | The string you are looking for.
 
 # Raw POI
 
-All the POI in use in CBIS for the organization owning the API key, with your own translations as well.
-A Raw POI object looks like that:
+> Raw POI
 ```json
 {
   "Id": 16,
@@ -336,6 +330,8 @@ A Raw POI object looks like that:
   }
 }
 ```
+
+All the POI in use in CBIS for the organization owning the API key, with your own translations as well.
 
 ## Get POI
 
@@ -357,7 +353,6 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/poi/{id}",
 ```
 
 > Example of response:
-
 ```json
 {
   "Id": 16,
@@ -404,7 +399,6 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/poi/getpaged/{page
 ```
 
 > Example of response:
-
 ```json
 {
   "ContinueToken": "c2NhbjsxOzY4MDQwODYxOkM2a0hnTFpmUUVLeHNlSUhoc0d5clE7MTt0b3RhbF9oaXRzOjI4NzQ7",
@@ -470,7 +464,6 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/poi/getnext/{conti
 ```
 
 > Example of response:
-
 ```json
 {
   "ContinueToken": "c2NhbjswOzE7dG90YWxfaGl0czo2Ow==",
@@ -551,7 +544,6 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/poi/search/{search
 ```
 
 > Example of response:
-
 ```json
 [
   {
