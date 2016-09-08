@@ -2,12 +2,6 @@
 
 > Filter
 
-{
-  "Sort": {},
-  "Page": 0,
-  "PageSize": 0,
-} 
-
 ```json
 {
   "Sort": {},
