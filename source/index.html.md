@@ -18,6 +18,13 @@ includes:
   - rawcategory
   - rawproduct
   - rawarena
+  - attribute
+  - poi
+  - geo
+  - category
+  - product
+  - arena
+  - filter
   - errors
 
 search: true

@@ -16,6 +16,13 @@
 
 All the attributes in use in CBIS for the organization owning the API key, with your own translations as well.
 
+Possible types are:
+* String
+* Integer
+* Boolean
+* Double
+* DateTime
+
 ## Get Attribute
 
 ```shell
