@@ -434,13 +434,15 @@ Filter products by the content of the Information they carry, by having an attri
 * Has (has the attribute)
 * Hasnt (has not the attribute)
 
-Information & SubQuery objects:
+### Information & SubQuery objects
+
 Parameter | Type | Description
 --------- | ---- | -----------
 Operator | Operator | The operator to apply between the queries.
 Queries | Query[] | A list of query.
 
-Query object:
+### Query object
+
 Parameter | Type | Description
 --------- | ---- | -----------
 Id | int | Attribute Id.
@@ -544,13 +546,15 @@ Filter products by the products related to the product, apply filters to related
 * Child 
 * Parent
 
-Relations & SubQuery objects:
+### Relations & SubQuery objects
+
 Parameter | Type | Description
 --------- | ---- | -----------
 Operator | Operator | The operator to apply between the queries.
 Queries | Query[] | A list of query.
 
-Query object:
+### Query object
+
 Parameter | Type | Description
 --------- | ---- | -----------
 Type | MatchType | See above.
