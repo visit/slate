@@ -252,5 +252,5 @@ You can supply an empty filter to get all the POIs and the number of products us
 
 Parameter | Description
 --------- | -----------
-filter | The <a href="https://bqk-.github.io/slate/#filter">product filter</a>.
+filter | The <a href="https://visit.github.io/api-doc/#filter">product filter</a>.
 Accept-Language | The language.

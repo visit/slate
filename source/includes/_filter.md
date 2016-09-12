@@ -559,7 +559,7 @@ Parameter | Type | Description
 --------- | ---- | -----------
 Type | MatchType | See above.
 RelationType | RelationType | See above.
-Filter | Filter | The <a href="https://bqk-.github.io/slate/#filter">product filter</a>.
+Filter | Filter | The <a href="https://visit.github.io/api-doc/#filter">product filter</a>.
 SubQuery | SubQuery | See above.
 
 ## Fields

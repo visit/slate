@@ -148,7 +148,7 @@ pageSize | Should be a page size lower than 50 and greater than 0.
 
 
 <aside class="notice">
-Use the <a href="https://bqk-.github.io/slate/#continue20">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+Use the <a href="https://visit.github.io/api-doc/#continue20">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
 </aside>
 
 ## Continue
@@ -220,7 +220,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/category/getnext/{
 }
 ```
 
-Get the next page of raw categories, you need to provide a token obtained from <a href="https://bqk-.github.io/slate/#get-paged19">Get Paged</a>.
+Get the next page of raw categories, you need to provide a token obtained from <a href="https://visit.github.io/api-doc/#get-paged19">Get Paged</a>.
 
 ### HTTP Request
 
@@ -234,7 +234,7 @@ continueToken | A token to retrieve the next page.
 
 
 <aside class="notice">
-Use the <a href="https://bqk-.github.io/slate/#continue20">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+Use the <a href="https://visit.github.io/api-doc/#continue20">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
 </aside>
 
 ## Search Categories

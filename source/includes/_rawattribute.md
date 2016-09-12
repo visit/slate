@@ -138,7 +138,7 @@ pageSize | Should be a page size lower than 50 and greater than 0.
 
 
 <aside class="notice">
-Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+Use the <a href="https://visit.github.io/api-doc/#continue">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
 </aside>
 
 ## Continue
@@ -189,7 +189,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/getnext/
  }
 ```
 
-Get the next page of raw attributes, you need to provide a token obtained from <a href="https://bqk-.github.io/slate/#get-paged">Get Paged</a>.
+Get the next page of raw attributes, you need to provide a token obtained from <a href="https://visit.github.io/api-doc/#get-paged">Get Paged</a>.
 
 ### HTTP Request
 
@@ -203,7 +203,7 @@ continueToken | A token to retrieve the next page.
 
 
 <aside class="notice">
-Use the <a href="https://bqk-.github.io/slate/#continue">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
+Use the <a href="https://visit.github.io/api-doc/#continue">ContinueToken</a> to grab the next page until you get an <b>empty</b> result set.
 </aside>
 
 ## Search Attributes

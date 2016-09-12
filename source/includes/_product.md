@@ -422,7 +422,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/product",
 }
 ```
 
-Filter products using a filter, see <a href="https://bqk-.github.io/slate/#filter">POST Fitler</a> for more information about it.
+Filter products using a filter, see <a href="https://visit.github.io/api-doc/#filter">POST Fitler</a> for more information about it.
 
 ### HTTP Request
 
@@ -432,5 +432,5 @@ Filter products using a filter, see <a href="https://bqk-.github.io/slate/#filte
 
 Parameter | Description
 --------- | -----------
-filter | The <a href="https://bqk-.github.io/slate/#filter">filter</a>.
+filter | The <a href="https://visit.github.io/api-doc/#filter">filter</a>.
 Accept-Language | The language.
