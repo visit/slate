@@ -651,6 +651,6 @@ Order products by the supplied field.
 Parameter | Type | Description
 --------- | ---- | -----------
 Field | string | Name of the field you want to order by.
-Order | Order | Either `Asc` or `Desc`
-Page | int | The pagesize
+Order | Order | Either `Asc` or `Desc`.
+Page | int | The page, starting at 0.
 PageSize | int | The size of the page.
