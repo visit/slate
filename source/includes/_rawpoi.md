@@ -22,7 +22,7 @@ All the POIs in use in CBIS for the organization owning the API key, with your o
 
 ```shell
 curl -X GET 
-  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'ApiKey: APIKEY132456789EWOK'
   --header 'Accept: application/json' 
   'https://cbis-rest-api.citybreak.com/v1/api/raw/poi/{id}'
 ```
@@ -31,7 +31,7 @@ curl -X GET
 var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/poi/{id}",
 {
   headers: {
-    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "ApiKey:" "APIKEY132456789EWOK",
     "Accept": "application/json"
   }  
 });
@@ -69,7 +69,7 @@ id | The POI id.
 
 ```shell
 curl -X GET 
-  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'ApiKey: APIKEY132456789EWOK'
   --header 'Accept: application/json' 
   'https://cbis-rest-api.citybreak.com/v1/api/raw/poi/getpaged/{pageSize}'
 ```
@@ -78,7 +78,7 @@ curl -X GET
 var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/poi/getpaged/{pageSize}",
 {
   headers: {
-    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "ApiKey:" "APIKEY132456789EWOK",
     "Accept": "application/json"
   }  
 });
@@ -134,7 +134,7 @@ Use the <a href="https://visit.github.io/api-doc/#continue10">ContinueToken</a> 
 
 ```shell
 curl -X GET 
-  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'ApiKey: APIKEY132456789EWOK'
   --header 'Accept: application/json' 
   'https://cbis-rest-api.citybreak.com/v1/api/raw/poi/getnext/{continueToken}'
 ```
@@ -143,7 +143,7 @@ curl -X GET
 var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/poi/getnext/{continueToken}",
 {
   headers: {
-    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "ApiKey:" "APIKEY132456789EWOK",
     "Accept": "application/json"
   }  
 });
@@ -214,7 +214,7 @@ Use the <a href="https://visit.github.io/api-doc/#continue10">ContinueToken</a> 
 
 ```shell
 curl -X GET 
-  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'ApiKey: APIKEY132456789EWOK'
   --header 'Accept: application/json' 
   'https://cbis-rest-api.citybreak.com/v1/api/raw/poi/search/{search}'
 ```
@@ -223,7 +223,7 @@ curl -X GET
 var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/poi/search/{search}",
 {
   headers: {
-    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "ApiKey:" "APIKEY132456789EWOK",
     "Accept": "application/json"
   }  
 });

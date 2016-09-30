@@ -20,7 +20,7 @@ The header <code>Accept-Language</code> is used to know which language to query.
 
 ```shell
 curl -X GET 
-  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'ApiKey: APIKEY132456789EWOK'
   --header 'Accept: application/json' 
   --header 'Accept-Language: en-US'
   'https://cbis-rest-api.citybreak.com/v1/api/category'
@@ -30,7 +30,7 @@ curl -X GET
 var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/category",
 {
   headers: {
-    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "ApiKey:" "APIKEY132456789EWOK",
     "Accept": "application/json",
 	"Accept-Language": "en-US"
   }  
@@ -119,7 +119,7 @@ Accept-Language | The language.
 
 ```shell
 curl -X GET 
-  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'ApiKey: APIKEY132456789EWOK'
   --header 'Accept: application/json' 
   --header 'Accept-Language: en-US'
   'https://cbis-rest-api.citybreak.com/v1/api/category/search/{search}'
@@ -129,7 +129,7 @@ curl -X GET
 var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/category/search/{search}",
 {
   headers: {
-    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "ApiKey:" "APIKEY132456789EWOK",
     "Accept": "application/json",
 	"Accept-Language": "en-US"
   }  
@@ -164,7 +164,7 @@ Accept-Language | The language.
 
 ```shell
 curl -X POST 
-  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'ApiKey: APIKEY132456789EWOK'
   --header 'Accept: application/json' 
   --header 'Accept-Language: en-US'
   --header 'Content-Type: application/json'
@@ -179,7 +179,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/category/product",
 {
   method: "POST",
   headers: {
-    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "ApiKey:" "APIKEY132456789EWOK",
     "Accept": "application/json",
 	"Accept-Language": "en-US",
 	"Content-Type": "application/json"

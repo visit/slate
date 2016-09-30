@@ -13,12 +13,12 @@
   "Position": {},
   "ProductIds": [],
   "Categories": [],
-  "Geonodes": [],
+  "Geos": [],
   "Pois": [],
-  "Occasion": {},
+  "Occasions": {},
   "Information": {},
-  "Publish": {},
-  "Expires": {}
+  "PublishAt": {},
+  "ExpiresAt": {}
 }
 ```
 
@@ -32,7 +32,7 @@ Filter used to query products.
 
 ```shell
 curl -X POST 
-  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'ApiKey: APIKEY132456789EWOK'
   --header 'Accept: application/json' 
   --header 'Accept-Language: en-US'
   --header 'Content-Type: application/json'
@@ -42,7 +42,7 @@ curl -X POST
 	  "Categories": [
 		123, 124
 	  ],
-	  "Geonodes": [
+	  "Geos": [
 	  	123, 124
 	   ],
 	  "Pois": [
@@ -57,7 +57,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/product",
 {
   method: "POST",
   headers: {
-    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "ApiKey:" "APIKEY132456789EWOK",
     "Accept": "application/json",
 	"Accept-Language": "en-US",
 	"Content-Type": "application/json"
@@ -68,7 +68,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/product",
 	  "Categories": [
 		123, 124
 	  ],
-	  "Geonodes": [
+	  "Geos": [
 	  	123, 124
 	   ],
 	  "Pois": [
@@ -85,25 +85,25 @@ Categories, Geonodes and Pois are list of integers. The example query can be tra
 Parameter | Type | Description
 --------- | ---- | -----------
 Categories | int[] | List of categories Ids.
-Geonodes | int[] | List of geonodes Ids.
+Geos | int[] | List of geonodes Ids.
 Pois | int[] | List of pois Ids.
 
 ## Expires and Publish
 
 ```shell
 curl -X POST 
-  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'ApiKey: APIKEY132456789EWOK'
   --header 'Accept: application/json' 
   --header 'Accept-Language: en-US'
   --header 'Content-Type: application/json'
   -d '{
 	  "Page": 0,
 	  "PageSize": 20,
-	  "Publish": {
+	  "PublishAt": {
 	    "After": "2016-09-08T07:09:44.042Z",
 		"Before": "2016-09-08T07:09:44.042Z"
 	  },
-	  "Expires": {
+	  "ExpiresAt": {
 	    "After": "2016-09-08T07:09:44.042Z",
 		"Before": "2016-09-08T07:09:44.042Z"
 	  }
@@ -116,7 +116,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/product",
 {
   method: "POST",
   headers: {
-    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "ApiKey:" "APIKEY132456789EWOK",
     "Accept": "application/json",
 	"Accept-Language": "en-US",
 	"Content-Type": "application/json"
@@ -136,8 +136,8 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/product",
 });
 ```
 
-Allow you to override the default filters on `Expires` and `Publish`.
-If not supplied, the default value will be `"Publish": {"After": "NOW"}`, and `"Expires": {"After": "NOW"}`.
+Allow you to override the default filters on `ExpiresAt` and `PublishAt`.
+If not supplied, the default value will be `"PublishAt": {"After": "NOW"}`, and `"ExpiresAt": {"After": "NOW"}`.
 
 ### Parameters
 
@@ -151,7 +151,7 @@ After | DateTime | After which date.
 
 ```shell
 curl -X POST 
-  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'ApiKey: APIKEY132456789EWOK'
   --header 'Accept: application/json' 
   --header 'Accept-Language: en-US'
   --header 'Content-Type: application/json'
@@ -168,7 +168,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/product",
 {
   method: "POST",
   headers: {
-    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "ApiKey:" "APIKEY132456789EWOK",
     "Accept": "application/json",
 	"Accept-Language": "en-US",
 	"Content-Type": "application/json"
@@ -193,7 +193,7 @@ Search | string | String you are looking for, handles typos.
 
 ```shell
 curl -X POST 
-  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'ApiKey: APIKEY132456789EWOK'
   --header 'Accept: application/json' 
   --header 'Accept-Language: en-US'
   --header 'Content-Type: application/json'
@@ -215,7 +215,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/product",
 {
   method: "POST",
   headers: {
-    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "ApiKey:" "APIKEY132456789EWOK",
     "Accept": "application/json",
 	"Accept-Language": "en-US",
 	"Content-Type": "application/json"
@@ -248,7 +248,7 @@ MaxDistance | int | Maximum distance from reference point (km).
 
 ```shell
 curl -X POST 
-  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'ApiKey: APIKEY132456789EWOK'
   --header 'Accept: application/json' 
   --header 'Accept-Language: en-US'
   --header 'Content-Type: application/json'
@@ -267,7 +267,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/product",
 {
   method: "POST",
   headers: {
-    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "ApiKey:" "APIKEY132456789EWOK",
     "Accept": "application/json",
 	"Accept-Language": "en-US",
 	"Content-Type": "application/json"
@@ -294,14 +294,14 @@ ProductIds | string[] | The productIds.
 
 ```shell
 curl -X POST 
-  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'ApiKey: APIKEY132456789EWOK'
   --header 'Accept: application/json' 
   --header 'Accept-Language: en-US'
   --header 'Content-Type: application/json'
   -d '{
 	  "Page": 0,
 	  "PageSize": 20,
-	  "Position": {
+	  "Occasions": {
             "After": "2016-09-08T07:09:44.042Z",
             "Before": "2016-09-08T07:09:44.042Z",
             "ArenaIds": [
@@ -317,7 +317,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/product",
 {
   method: "POST",
   headers: {
-    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "ApiKey:" "APIKEY132456789EWOK",
     "Accept": "application/json",
 	"Accept-Language": "en-US",
 	"Content-Type": "application/json"
@@ -325,7 +325,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/product",
   body: JSON.stringify({
 	  "Page": 0,
 	  "PageSize": 20,
-	  "Position": {
+	  "Occasion": {
             "After": "2016-09-08T07:09:44.042Z",
             "Before": "2016-09-08T07:09:44.042Z",
             "ArenaIds": [
@@ -351,7 +351,7 @@ ArenaIds | string[] | Occasion occurs in one of the arenas.
 
 ```shell
 curl -X POST 
-  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'ApiKey: APIKEY132456789EWOK'
   --header 'Accept: application/json' 
   --header 'Accept-Language: en-US'
   --header 'Content-Type: application/json'
@@ -387,7 +387,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/product",
 {
   method: "POST",
   headers: {
-    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "ApiKey:" "APIKEY132456789EWOK",
     "Accept": "application/json",
 	"Accept-Language": "en-US",
 	"Content-Type": "application/json"
@@ -455,7 +455,7 @@ SubQuery | SubQuery | See above.
 
 ```shell
 curl -X POST 
-  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'ApiKey: APIKEY132456789EWOK'
   --header 'Accept: application/json' 
   --header 'Accept-Language: en-US'
   --header 'Content-Type: application/json'
@@ -494,7 +494,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/product",
 {
   method: "POST",
   headers: {
-    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "ApiKey:" "APIKEY132456789EWOK",
     "Accept": "application/json",
 	"Accept-Language": "en-US",
 	"Content-Type": "application/json"
@@ -566,7 +566,7 @@ SubQuery | SubQuery | See above.
 
 ```shell
 curl -X POST 
-  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'ApiKey: APIKEY132456789EWOK'
   --header 'Accept: application/json' 
   --header 'Accept-Language: en-US'
   --header 'Content-Type: application/json'
@@ -583,7 +583,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/product",
 {
   method: "POST",
   headers: {
-    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "ApiKey:" "APIKEY132456789EWOK",
     "Accept": "application/json",
 	"Accept-Language": "en-US",
 	"Content-Type": "application/json"
@@ -604,11 +604,11 @@ Parameter | Type | Description
 --------- | ---- | -----------
 Fields | string[] | Name of the fields you want populated, required if pagesize >= 50.
 
-## Sorting
+## Sorting & Paging
 
 ```shell
 curl -X POST 
-  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'ApiKey: APIKEY132456789EWOK'
   --header 'Accept: application/json' 
   --header 'Accept-Language: en-US'
   --header 'Content-Type: application/json'
@@ -628,7 +628,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/product",
 {
   method: "POST",
   headers: {
-    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "ApiKey:" "APIKEY132456789EWOK",
     "Accept": "application/json",
 	"Accept-Language": "en-US",
 	"Content-Type": "application/json"
@@ -646,11 +646,15 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/product",
 
 Order products by the supplied field.
 
-### Parameters
+### Sort Object
 
 Parameter | Type | Description
 --------- | ---- | -----------
 Field | string | Name of the field you want to order by.
 Order | Order | Either `Asc` or `Desc`
+
+### Paging
+Parameter | Type | Description
+--------- | ---- | -----------
 Page | int | The pagesize
 PageSize | int | The size of the page.

@@ -94,7 +94,7 @@ All the info we have about your arenas.
 
 ```shell
 curl -X GET 
-  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'ApiKey: APIKEY132456789EWOK'
   --header 'Accept: application/json' 
   'https://cbis-rest-api.citybreak.com/v1/api/raw/arena/{id}'
 ```
@@ -103,7 +103,7 @@ curl -X GET
 var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/arena/{id}",
 {
   headers: {
-    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "ApiKey:" "APIKEY132456789EWOK",
     "Accept": "application/json"
   }  
 });
@@ -215,7 +215,7 @@ id | The arena id.
 
 ```shell
 curl -X GET 
-  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'ApiKey: APIKEY132456789EWOK'
   --header 'Accept: application/json' 
   'https://cbis-rest-api.citybreak.com/v1/api/raw/arena/getpaged/{pageSize}'
 ```
@@ -224,7 +224,7 @@ curl -X GET
 var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/Arena/getpaged/{pageSize}",
 {
   headers: {
-    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "ApiKey:" "APIKEY132456789EWOK",
     "Accept": "application/json"
   }  
 });
@@ -345,7 +345,7 @@ Use the <a href="https://visit.github.io/api-doc/#continue29">ContinueToken</a> 
 
 ```shell
 curl -X GET 
-  --header 'Authorization: Basic dXNlcm5hbWU6QVBJS0VZMTMyNDU2Nzg5RVdPSw=='
+  --header 'ApiKey: APIKEY132456789EWOK'
   --header 'Accept: application/json' 
   'https://cbis-rest-api.citybreak.com/v1/api/raw/arena/getnext/{continueToken}'
 ```
@@ -354,7 +354,7 @@ curl -X GET
 var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/arena/getnext/{continueToken}",
 {
   headers: {
-    "Authorization": "Basic " + btoa("username:APIKEY132456789EWOK"),
+    "ApiKey:" "APIKEY132456789EWOK",
     "Accept": "application/json"
   }  
 });
