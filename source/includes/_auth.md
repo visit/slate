@@ -1,7 +1,5 @@
 # Authentication
 
-> To authorize, you will need to use basic authentication.
-
 ```shell
 curl --header 'ApiKey: APIKEY132456789EWOK'
 ```
