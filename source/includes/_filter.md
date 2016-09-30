@@ -656,5 +656,5 @@ Order | Order | Either `Asc` or `Desc`
 ### Paging
 Parameter | Type | Description
 --------- | ---- | -----------
-Page | int | The pagesize
+Page | int | The page, starting at 0.
 PageSize | int | The size of the page.
