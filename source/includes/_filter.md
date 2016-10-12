@@ -545,6 +545,7 @@ Filter products by the products related to the product, apply filters to related
 
 * Child 
 * Parent
+* None (products matching filter in subqueries)
 
 ### Relations & SubQuery objects
 
