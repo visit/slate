@@ -78,7 +78,7 @@ Get the geo tree in the specified language.
 
 ### HTTP Request
 
-`GET https://cbis-rest-api.citybreak.com/v1/geo`
+`GET https://cbis-rest-api.citybreak.com/v1/api/geo`
 
 ### Query Parameters
 

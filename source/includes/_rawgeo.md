@@ -279,7 +279,7 @@ Search for a match or more in geos translations.
 
 ### HTTP Request
 
-`GET https://cbis-rest-api.citybreak.com/v1/raw/geo/search/{search}`
+`GET https://cbis-rest-api.citybreak.com/v1/api/raw/geo/search/{search}`
 
 ### Query Parameters
 

@@ -197,7 +197,7 @@ Get the next page of raw POIs, you need to provide a token obtained from <a href
 
 ### HTTP Request
 
-`GET https://cbis-rest-api.citybreak.com/v1/raw/poi/getnext/{continueToken}`
+`GET https://cbis-rest-api.citybreak.com/v1/api/raw/poi/getnext/{continueToken}`
 
 ### Query Parameters
 
@@ -251,7 +251,7 @@ Search for a match or more in POIs translations.
 
 ### HTTP Request
 
-`GET https://cbis-rest-api.citybreak.com/v1/raw/poi/search/{search}`
+`GET https://cbis-rest-api.citybreak.com/v1/api/raw/poi/search/{search}`
 
 ### Query Parameters
 

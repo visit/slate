@@ -68,7 +68,7 @@ Get a specific attribute and all its translations.
 
 ### HTTP Request
 
-`GET https://cbis-rest-api.citybreak.com/v1/raw/attribute/{id}`
+`GET https://cbis-rest-api.citybreak.com/v1/api/raw/attribute/{id}`
 
 ### Query Parameters
 

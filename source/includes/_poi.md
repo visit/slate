@@ -58,7 +58,7 @@ Get a specific POI in the specified language.
 
 ### HTTP Request
 
-`GET https://cbis-rest-api.citybreak.com/v1/poi/{id}`
+`GET https://cbis-rest-api.citybreak.com/v1/api/poi/{id}`
 
 ### Query Parameters
 

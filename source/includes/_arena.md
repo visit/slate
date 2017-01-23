@@ -187,7 +187,7 @@ Search for arenas responding to the id supplied, might be more than 1.
 
 ### HTTP Request
 
-`GET https://cbis-rest-api.citybreak.com/v1/arena/{id}`
+`GET https://cbis-rest-api.citybreak.com/v1/api/arena/{id}`
 
 ### Query Parameters
 

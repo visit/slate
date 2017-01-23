@@ -224,7 +224,7 @@ Get the next page of raw categories, you need to provide a token obtained from <
 
 ### HTTP Request
 
-`GET https://cbis-rest-api.citybreak.com/v1/raw/category/getnext/{continueToken}`
+`GET https://cbis-rest-api.citybreak.com/v1/api/raw/category/getnext/{continueToken}`
 
 ### Query Parameters
 
@@ -279,7 +279,7 @@ Search for a match or more in categories translations.
 
 ### HTTP Request
 
-`GET https://cbis-rest-api.citybreak.com/v1/raw/category/search/{search}`
+`GET https://cbis-rest-api.citybreak.com/v1/api/raw/category/search/{search}`
 
 ### Query Parameters
 

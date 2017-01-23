@@ -458,7 +458,7 @@ Get the next page of raw products, you need to provide a token obtained from <a 
 
 ### HTTP Request
 
-`GET https://cbis-rest-api.citybreak.com/v1/raw/product/getnext/{continueToken}`
+`GET https://cbis-rest-api.citybreak.com/v1/api/raw/product/getnext/{continueToken}`
 
 ### Query Parameters
 

@@ -58,7 +58,7 @@ Get a specific attribute in the specified language.
 
 ### HTTP Request
 
-`GET https://cbis-rest-api.citybreak.com/v1/attribute/{id}`
+`GET https://cbis-rest-api.citybreak.com/v1/api/attribute/{id}`
 
 ### Query Parameters
 

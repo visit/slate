@@ -107,7 +107,7 @@ Get the category tree in the specified language.
 
 ### HTTP Request
 
-`GET https://cbis-rest-api.citybreak.com/v1/category`
+`GET https://cbis-rest-api.citybreak.com/v1/api/category`
 
 ### Query Parameters
 

@@ -458,7 +458,7 @@ Get the next page of raw arenas, you need to provide a token obtained from <a hr
 
 ### HTTP Request
 
-`GET https://cbis-rest-api.citybreak.com/v1/raw/arena/getnext/{continueToken}`
+`GET https://cbis-rest-api.citybreak.com/v1/api/raw/arena/getnext/{continueToken}`
 
 ### Query Parameters
 
