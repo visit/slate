@@ -219,6 +219,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/geo/getnext/{conti
 ```
 
 Get the next page of raw geos, you need to provide a token obtained from <a href="https://visit.github.io/api-doc/#get-paged14">Get Paged</a>.
+Tokens are valid for 1 minute, extended for aonother minute each time you use it.
 
 ### HTTP Request
 

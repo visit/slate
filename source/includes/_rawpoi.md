@@ -194,6 +194,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/poi/getnext/{conti
 ```
 
 Get the next page of raw POIs, you need to provide a token obtained from <a href="https://visit.github.io/api-doc/#get-paged9">Get Paged</a>.
+Tokens are valid for 1 minute, extended for aonother minute each time you use it.
 
 ### HTTP Request
 

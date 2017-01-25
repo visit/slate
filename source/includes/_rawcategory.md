@@ -221,6 +221,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/raw/category/getnext/{
 ```
 
 Get the next page of raw categories, you need to provide a token obtained from <a href="https://visit.github.io/api-doc/#get-paged19">Get Paged</a>.
+Tokens are valid for 1 minute, extended for aonother minute each time you use it.
 
 ### HTTP Request
 
