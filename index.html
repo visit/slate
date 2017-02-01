@@ -4351,6 +4351,7 @@ The header <code>Accept-Language</code> is used to know which language to query.
   </span><span class="nt">"Relations"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
   </span><span class="nt">"Search"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="nt">"Position"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="nt">"GeoBox"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
   </span><span class="nt">"ProductIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
   </span><span class="nt">"Categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
   </span><span class="nt">"Geos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
@@ -4570,8 +4571,7 @@ If not supplied, the default value will be <code class="prettyprint">&quot;Publi
       "Position": {
         "Latitude": 0,
         "Longitude": 0,
-        "MinDistance": 0,
-        "MaxDistance": 0
+        "Distance": 0
       }
     }'</span>   
   <span class="s1">'https://cbis-rest-api.citybreak.com/v1/api/product'</span>
@@ -4598,7 +4598,7 @@ If not supplied, the default value will be <code class="prettyprint">&quot;Publi
 <span class="p">});</span>
 </code></pre>
 
-<p>Filter products by their position. You need to supply a reference point and <code class="prettyprint">MinDistance</code> or <code class="prettyprint">MaxDistance</code>, or <code class="prettyprint">both</code>.</p>
+<p>Filter products by their position. You need to supply a reference point and a <code class="prettyprint">Distance</code> (radius in Km).</p>
 
 <h3 id="parameters">Parameters</h3>
 
@@ -4620,14 +4620,83 @@ If not supplied, the default value will be <code class="prettyprint">&quot;Publi
 <td>Longitude of reference point.</td>
 </tr>
 <tr>
-<td>MinDistance</td>
+<td>Distance</td>
 <td>int</td>
-<td>Minimum distance from reference point (km).</td>
+<td>Distance from reference point (km).</td>
+</tr>
+</tbody></table>
+
+<h2 id="geobox">GeoBox</h2>
+<pre class="highlight shell"><code>curl -X POST 
+  --header <span class="s1">'ApiKey: APIKEY132456789EWOK'</span>
+  --header <span class="s1">'Accept: application/json'</span> 
+  --header <span class="s1">'Accept-Language: en-US'</span>
+  --header <span class="s1">'Content-Type: application/json'</span>
+  -d <span class="s1">'{
+      "Page": 0,
+      "PageSize": 20,
+      "GeoBox": {
+        "TopLeftLat": 0,
+        "TopLeftLng": 0,
+        "BottomRightLat": 0,
+        "BottomRightLng": 0
+      }
+    }'</span>   
+  <span class="s1">'https://cbis-rest-api.citybreak.com/v1/api/product'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://cbis-rest-api.citybreak.com/v1/api/product"</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"ApiKey:"</span> <span class="s2">"APIKEY132456789EWOK"</span><span class="p">,</span>
+    <span class="s2">"Accept"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+    <span class="s2">"Accept-Language"</span><span class="p">:</span> <span class="s2">"en-US"</span><span class="p">,</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">},</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+      <span class="s2">"Page"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"PageSize"</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+      <span class="s2">"GeoBox"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"TopLeftLat"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"TopLeftLng"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"BottomRightLat"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"BottomRightLng"</span><span class="p">:</span> <span class="mi">0</span>
+      <span class="p">}</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</code></pre>
+
+<p>Filter products by their position. You need to supply the coordinates of the top left point and the bottom right one.
+Products included in the geographic box will be returned.</p>
+
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>TopLeftLat</td>
+<td>double</td>
+<td>Latitude of the top left point.</td>
 </tr>
 <tr>
-<td>MaxDistance</td>
-<td>int</td>
-<td>Maximum distance from reference point (km).</td>
+<td>TopLeftLng</td>
+<td>double</td>
+<td>Longitude of the top left point.</td>
+</tr>
+<tr>
+<td>BottomRightLat</td>
+<td>double</td>
+<td>Latitude of the bottom right point.</td>
+</tr>
+<tr>
+<td>BottomRightLng</td>
+<td>double</td>
+<td>Longitude of the bottom right point.</td>
 </tr>
 </tbody></table>
 
