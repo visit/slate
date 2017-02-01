@@ -11,6 +11,7 @@
   "Relations": {},
   "Search": "",
   "Position": {},
+  "GeoBox": {},
   "ProductIds": [],
   "Categories": [],
   "Geos": [],
@@ -203,8 +204,7 @@ curl -X POST
 	  "Position": {
 		"Latitude": 0,
 		"Longitude": 0,
-		"MinDistance": 0,
-		"MaxDistance": 0
+		"Distance": 0
 	  }
 	}'	 
   'https://cbis-rest-api.citybreak.com/v1/api/product'
@@ -233,7 +233,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/product",
 });
 ```
 
-Filter products by their position. You need to supply a reference point and `MinDistance` or `MaxDistance`, or `both`.
+Filter products by their position. You need to supply a reference point and a `Distance` (radius in Km).
 
 ### Parameters
 
@@ -241,8 +241,63 @@ Parameter | Type | Description
 --------- | ---- | -----------
 Latitude | double | Latitude of reference point.
 Longitude | double | Longitude of reference point.
-MinDistance | int | Minimum distance from reference point (km).
-MaxDistance | int | Maximum distance from reference point (km).
+Distance | int | Distance from reference point (km).
+
+## GeoBox
+
+```shell
+curl -X POST 
+  --header 'ApiKey: APIKEY132456789EWOK'
+  --header 'Accept: application/json' 
+  --header 'Accept-Language: en-US'
+  --header 'Content-Type: application/json'
+  -d '{
+	  "Page": 0,
+	  "PageSize": 20,
+	  "GeoBox": {
+		"TopLeftLat": 0,
+		"TopLeftLng": 0,
+		"BottomRightLat": 0,
+		"BottomRightLng": 0
+	  }
+	}'	 
+  'https://cbis-rest-api.citybreak.com/v1/api/product'
+```
+
+```javascript
+var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/product",
+{
+  method: "POST",
+  headers: {
+    "ApiKey:" "APIKEY132456789EWOK",
+    "Accept": "application/json",
+	"Accept-Language": "en-US",
+	"Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+	  "Page": 0,
+	  "PageSize": 20,
+	  "GeoBox": {
+		"TopLeftLat": 0,
+		"TopLeftLng": 0,
+		"BottomRightLat": 0,
+		"BottomRightLng": 0
+	  }
+  })
+});
+```
+
+Filter products by their position. You need to supply the coordinates of the top left point and the bottom right one.
+Products included in the geographic box will be returned.
+
+### Parameters
+
+Parameter | Type | Description
+--------- | ---- | -----------
+TopLeftLat | double | Latitude of the top left point.
+TopLeftLng | double | Longitude of the top left point.
+BottomRightLat | double | Latitude of the bottom right point.
+BottomRightLng | double | Longitude of the bottom right point.
 
 ## ProductIds
 
