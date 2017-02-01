@@ -5249,38 +5249,34 @@ Contact our <a href="https://support.citybreak.com/">support</a> if you wish to 
 * No authentication</p>
 
 <p>We also handle automatic retries if your endpoint is unavailable.</p>
-
-<h2 id="example">Example</h2>
-
-<p><code class="prettyprint">
-{
-    &quot;Key&quot; : &quot;APIKEY132456789EWOK&quot;,
-    &quot;HasLog&quot; : true,
-    &quot;Attribute&quot; : {
-        &quot;AffectedProducts&quot; : [&quot;cbis:355699&quot;, &quot;cbis:1245084&quot;, &quot;cbis:1268500&quot;, &quot;cbis:1270889&quot;],
-        &quot;Date&quot; : &quot;2016-11-03T12:38:09.7400589Z&quot;,
-        &quot;Changes&quot; : {
-            &quot;99&quot; : &quot;Updated&quot;,
-            &quot;102727&quot; : &quot;Created&quot;,
-            &quot;102728&quot; : &quot;Deleted&quot;,
-        }
-    },
-    &quot;Geo&quot; : null,
-    &quot;Cat&quot; : null,
-    &quot;Poi&quot; : null,
-    &quot;Product&quot; : {
-        &quot;AffectedProducts&quot; : [&quot;cbis:355699&quot;, &quot;cbis:1245084&quot;, &quot;cbis:1268500&quot;, &quot;cbis:1270889&quot;],
-        &quot;Date&quot; : &quot;2016-11-03T12:38:08.1485162Z&quot;,
-        &quot;Changes&quot; : {
-            &quot;cbis:355699&quot; : &quot;Created&quot;,
-            &quot;cbis:1245084&quot; : &quot;Created&quot;,
-            &quot;cbis:1268500&quot; : &quot;Created&quot;,
-            &quot;cbis:1270889&quot; : &quot;Created&quot;,
-        }
-    },
-    &quot;Arena&quot; : null
-}
-</code></p>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"Key"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"APIKEY132456789EWOK"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"HasLog"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Attribute"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"AffectedProducts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"cbis:355699"</span><span class="p">,</span><span class="w"> </span><span class="s2">"cbis:1245084"</span><span class="p">,</span><span class="w"> </span><span class="s2">"cbis:1268500"</span><span class="p">,</span><span class="w"> </span><span class="s2">"cbis:1270889"</span><span class="p">],</span><span class="w">
+        </span><span class="nt">"Date"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-03T12:38:09.7400589Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"Changes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"99"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"102727"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Created"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"102728"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Deleted"</span><span class="p">,</span><span class="w">
+        </span><span class="err">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"Geo"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Cat"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Poi"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Product"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"AffectedProducts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"cbis:355699"</span><span class="p">,</span><span class="w"> </span><span class="s2">"cbis:1245084"</span><span class="p">,</span><span class="w"> </span><span class="s2">"cbis:1268500"</span><span class="p">,</span><span class="w"> </span><span class="s2">"cbis:1270889"</span><span class="p">],</span><span class="w">
+        </span><span class="nt">"Date"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-03T12:38:08.1485162Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"Changes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"cbis:355699"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Created"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"cbis:1245084"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Created"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"cbis:1268500"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Created"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"cbis:1270889"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Created"</span><span class="p">,</span><span class="w">
+        </span><span class="err">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"Arena"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
           <h1 id="errors">Errors</h1>
 
