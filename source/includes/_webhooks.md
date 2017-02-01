@@ -4,9 +4,9 @@ We provide Webhooks (<a href="https://en.wikipedia.org/wiki/Webhook">Wikipedia</
 Contact our <a href="http://help.citybreak.com/">support</a> if you wish to use this option.
 
 We support the following authentication methods:
-* Basic Authentication
-* Cusom Header Authentication
-* No authentication
+ * Basic Authentication
+ * Cusom Header Authentication
+ * No authentication
 
 We also handle automatic retries if your endpoint is unavailable.
 
@@ -23,8 +23,8 @@ We also handle automatic retries if your endpoint is unavailable.
 			"102728" : "Deleted"
 		}
 	},
-	"Geo" : null,
 	"Cat" : null,
+	"Geo" : null,
 	"Poi" : null,
 	"Product" : {
 		"AffectedProducts" : ["cbis:355699", "cbis:1245084", "cbis:1268500", "cbis:1270889"],
