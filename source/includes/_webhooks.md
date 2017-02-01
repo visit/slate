@@ -1,7 +1,7 @@
 # Webhooks
 
 We provide Webhooks (<a href="https://en.wikipedia.org/wiki/Webhook">Wikipedia</a>) for your API keys on demand. 
-Contact our <a href="https://support.citybreak.com/">support</a> if you wish to use this option.
+Contact our <a href="http://help.citybreak.com/">support</a> if you wish to use this option.
 
 We support the following authentication methods:
 * Basic Authentication
