@@ -226,8 +226,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/product",
 	  "Position": {
 		"Latitude": 0,
 		"Longitude": 0,
-		"MinDistance": 0,
-		"MaxDistance": 0
+		"Distance": 0
 	  }
   })
 });

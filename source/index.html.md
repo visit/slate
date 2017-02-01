@@ -6,7 +6,7 @@ language_tabs:
   - javascript
 
 toc_footers:
-  - <a href='https://support.citybreak.com/'>Citybreak Support</a> 
+  - <a href='http://help.citybreak.com/'>Citybreak Support</a> 
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -25,6 +25,7 @@ includes:
   - product
   - arena
   - filter
+  - webhooks
   - errors
 
 search: true
