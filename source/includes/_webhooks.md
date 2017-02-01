@@ -10,8 +10,7 @@ We support the following authentication methods:
 
 We also handle automatic retries if your endpoint is unavailable.
 
-## Example
-`
+```json
 {
 	"Key" : "APIKEY132456789EWOK",
 	"HasLog" : true,
@@ -39,4 +38,4 @@ We also handle automatic retries if your endpoint is unavailable.
 	},
 	"Arena" : null
 }
-`
+```
