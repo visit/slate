@@ -20,7 +20,7 @@ We also handle automatic retries if your endpoint is unavailable.
 		"Changes" : {
 			"99" : "Updated",
 			"102727" : "Created",
-			"102728" : "Deleted",
+			"102728" : "Deleted"
 		}
 	},
 	"Geo" : null,
@@ -33,7 +33,7 @@ We also handle automatic retries if your endpoint is unavailable.
 			"cbis:355699" : "Created",
 			"cbis:1245084" : "Created",
 			"cbis:1268500" : "Created",
-			"cbis:1270889" : "Created",
+			"cbis:1270889" : "Created"
 		}
 	},
 	"Arena" : null
