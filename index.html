@@ -111,7 +111,7 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li><a href='https://support.citybreak.com/'>Citybreak Support</a></li>
+            <li><a href='http://help.citybreak.com/'>Citybreak Support</a></li>
             <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -143,7 +143,7 @@ If you don&rsquo;t have an API key, visit <a href='http://help.citybreak.com/'>C
 <p>Make sure to replace <code class="prettyprint">APIKEY132456789EWOK</code> with your API key.</p>
 </blockquote>
 
-<p>If you don&rsquo;t have an API key, visit <a href="https://support.citybreak.com/">Citybreak Support</a> to get one.</p>
+<p>If you don&rsquo;t have an API key, visit <a href="http://help.citybreak.com/">Citybreak Support</a> to get one.</p>
 
 <p>CBIS REST API expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
 
@@ -4591,8 +4591,7 @@ If not supplied, the default value will be <code class="prettyprint">&quot;Publi
       <span class="s2">"Position"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"Latitude"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
         <span class="s2">"Longitude"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">"MinDistance"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">"MaxDistance"</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="s2">"Distance"</span><span class="p">:</span> <span class="mi">0</span>
       <span class="p">}</span>
   <span class="p">})</span>
 <span class="p">});</span>
@@ -5238,6 +5237,50 @@ Products included in the geographic box will be returned.</p>
 <td>The size of the page.</td>
 </tr>
 </tbody></table>
+
+          <h1 id="webhooks">Webhooks</h1>
+
+<p>We provide Webhooks (<a href="https://en.wikipedia.org/wiki/Webhook">Wikipedia</a>) for your API keys on demand. 
+Contact our <a href="https://support.citybreak.com/">support</a> if you wish to use this option.</p>
+
+<p>We support the following authentication methods:
+* Basic Authentication
+* Cusom Header Authentication
+* No authentication</p>
+
+<p>We also handle automatic retries if your endpoint is unavailable.</p>
+
+<h2 id="example">Example</h2>
+
+<p><code class="prettyprint">
+{
+    &quot;Key&quot; : &quot;APIKEY132456789EWOK&quot;,
+    &quot;HasLog&quot; : true,
+    &quot;Attribute&quot; : {
+        &quot;AffectedProducts&quot; : [&quot;cbis:355699&quot;, &quot;cbis:1245084&quot;, &quot;cbis:1268500&quot;, &quot;cbis:1270889&quot;],
+        &quot;Date&quot; : &quot;2016-11-03T12:38:09.7400589Z&quot;,
+        &quot;Changes&quot; : {
+            &quot;99&quot; : &quot;Updated&quot;,
+            &quot;102727&quot; : &quot;Created&quot;,
+            &quot;102728&quot; : &quot;Deleted&quot;,
+        }
+    },
+    &quot;Geo&quot; : null,
+    &quot;Cat&quot; : null,
+    &quot;Poi&quot; : null,
+    &quot;Product&quot; : {
+        &quot;AffectedProducts&quot; : [&quot;cbis:355699&quot;, &quot;cbis:1245084&quot;, &quot;cbis:1268500&quot;, &quot;cbis:1270889&quot;],
+        &quot;Date&quot; : &quot;2016-11-03T12:38:08.1485162Z&quot;,
+        &quot;Changes&quot; : {
+            &quot;cbis:355699&quot; : &quot;Created&quot;,
+            &quot;cbis:1245084&quot; : &quot;Created&quot;,
+            &quot;cbis:1268500&quot; : &quot;Created&quot;,
+            &quot;cbis:1270889&quot; : &quot;Created&quot;,
+        }
+    },
+    &quot;Arena&quot; : null
+}
+</code></p>
 
           <h1 id="errors">Errors</h1>
 
