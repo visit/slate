@@ -700,6 +700,13 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/product",
 ```
 
 Order products by the supplied field.
+Supported fields are:
+Name 
+Id 
+ExpiresAt 
+PublishAt
+ProductIds (follow order from array of ids in ProductIds field) 
+Occasions
 
 ### Sort Object
 
