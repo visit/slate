@@ -4,6 +4,7 @@ We provide Webhooks (<a href="https://en.wikipedia.org/wiki/Webhook">Wikipedia</
 Contact our <a href="http://help.citybreak.com/">support</a> if you wish to use this option.
 
 We support the following authentication methods:
+
  * Basic Authentication
  * Cusom Header Authentication
  * No authentication

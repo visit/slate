@@ -701,12 +701,14 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/product",
 
 Order products by the supplied field.
 Supported fields are:
-Name 
-Id 
-ExpiresAt 
-PublishAt
-ProductIds (follow order from array of ids in ProductIds field) 
-Occasions
+
+* Name 
+* Id 
+* ExpiresAt 
+* PublishAt
+* ProductIds (follow order from array of ids in ProductIds field) 
+* Occasions
+* Information (need to supply AttributeId)
 
 ### Sort Object
 
@@ -714,6 +716,7 @@ Parameter | Type | Description
 --------- | ---- | -----------
 Field | string | Name of the field you want to order by.
 Order | Order | Either `Asc` or `Desc`
+AttributeId | int | The attribute id of the information field you want to sort on
 
 ### Paging
 Parameter | Type | Description

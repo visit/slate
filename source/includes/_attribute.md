@@ -17,6 +17,7 @@ The header <code>Accept-Language</code> is used to know which language to query.
 </aside>
 
 Possible types are:
+
  * String
  * Integer
  * Boolean
