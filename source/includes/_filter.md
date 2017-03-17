@@ -518,19 +518,26 @@ curl -X POST
 	  "PageSize": 20,
 	  "Relations": {
 		"Operator": "AND",
-		"SubQuery": [
+		"Queries": [
 		  {
-			"Type": "Value",
+			"Type": "Has",
 			"RelationType": "Parent",
 			"Filter": {
 			},
 			"SubQuery": {
 				"Operator": "AND",
-				"SubQuery": [
+				"Queries": [
 				  {
 					"Type": "Value",
-					"RelationType": "Child",
+					"RelationType": "None",
 					"Filter": {
+						"Occasion": {
+							"After": "2016-09-08T07:09:44.042Z",
+							"Before": "2016-09-08T07:09:44.042Z",
+							"ArenaIds": [
+							  "cbis:12345"
+							]
+					   }
 					},
 					"SubQuery": {}	
 				  }
@@ -560,7 +567,7 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/product",
 		"Operator": "AND",
 		"Queries": [
 		  {
-			"Type": "Value",
+			"Type": "Has",
 			"RelationType": "Parent",
 			"Filter": {
 			},
@@ -569,8 +576,15 @@ var r = fetch("https://cbis-rest-api.citybreak.com/v1/api/product",
 				"Queries": [
 				  {
 					"Type": "Value",
-					"RelationType": "Child",
+					"RelationType": "None",
 					"Filter": {
+						"Occasion": {
+							"After": "2016-09-08T07:09:44.042Z",
+							"Before": "2016-09-08T07:09:44.042Z",
+							"ArenaIds": [
+							  "cbis:12345"
+							]
+					   }
 					},
 					"SubQuery": {}	
 				  }
