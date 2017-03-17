@@ -171,12 +171,15 @@ You must replace <code>APIKEY132456789EWOK</code> with your personal API key.
 
 <p>All the attributes in use in CBIS for the organization owning the API key, with your own translations as well.</p>
 
-<p>Possible types are:
-* String
-* Integer
-* Boolean
-* Double
-* DateTime</p>
+<p>Possible types are:</p>
+
+<ul>
+<li>String</li>
+<li>Integer</li>
+<li>Boolean</li>
+<li>Double</li>
+<li>DateTime</li>
+</ul>
 
 <h2 id="get-attribute">Get Attribute</h2>
 <pre class="highlight shell"><code>curl -X GET 
@@ -2302,12 +2305,15 @@ Use the <a href="https://visit.github.io/api-doc/#continue29">ContinueToken</a> 
 The header <code>Accept-Language</code> is used to know which language to query. It uses <a href="https://msdn.microsoft.com/en-us/library/ee825488(v=cs.20).aspx">CultureInfo code</a>.
 </aside>
 
-<p>Possible types are:
- * String
- * Integer
- * Boolean
- * Double
- * DateTime</p>
+<p>Possible types are:</p>
+
+<ul>
+<li>String</li>
+<li>Integer</li>
+<li>Boolean</li>
+<li>Double</li>
+<li>DateTime</li>
+</ul>
 
 <h2 id="get-attribute">Get Attribute</h2>
 <pre class="highlight shell"><code>curl -X GET 
@@ -4971,19 +4977,26 @@ Products included in the geographic box will be returned.</p>
       "PageSize": 20,
       "Relations": {
         "Operator": "AND",
-        "SubQuery": [
+        "Queries": [
           {
-            "Type": "Value",
+            "Type": "Has",
             "RelationType": "Parent",
             "Filter": {
             },
             "SubQuery": {
                 "Operator": "AND",
-                "SubQuery": [
+                "Queries": [
                   {
                     "Type": "Value",
-                    "RelationType": "Child",
+                    "RelationType": "None",
                     "Filter": {
+                        "Occasion": {
+                            "After": "2016-09-08T07:09:44.042Z",
+                            "Before": "2016-09-08T07:09:44.042Z",
+                            "ArenaIds": [
+                              "cbis:12345"
+                            ]
+                       }
                     },
                     "SubQuery": {}  
                   }
@@ -5011,7 +5024,7 @@ Products included in the geographic box will be returned.</p>
         <span class="s2">"Operator"</span><span class="p">:</span> <span class="s2">"AND"</span><span class="p">,</span>
         <span class="s2">"Queries"</span><span class="p">:</span> <span class="p">[</span>
           <span class="p">{</span>
-            <span class="s2">"Type"</span><span class="p">:</span> <span class="s2">"Value"</span><span class="p">,</span>
+            <span class="s2">"Type"</span><span class="p">:</span> <span class="s2">"Has"</span><span class="p">,</span>
             <span class="s2">"RelationType"</span><span class="p">:</span> <span class="s2">"Parent"</span><span class="p">,</span>
             <span class="s2">"Filter"</span><span class="p">:</span> <span class="p">{</span>
             <span class="p">},</span>
@@ -5020,8 +5033,15 @@ Products included in the geographic box will be returned.</p>
                 <span class="s2">"Queries"</span><span class="p">:</span> <span class="p">[</span>
                   <span class="p">{</span>
                     <span class="s2">"Type"</span><span class="p">:</span> <span class="s2">"Value"</span><span class="p">,</span>
-                    <span class="s2">"RelationType"</span><span class="p">:</span> <span class="s2">"Child"</span><span class="p">,</span>
+                    <span class="s2">"RelationType"</span><span class="p">:</span> <span class="s2">"None"</span><span class="p">,</span>
                     <span class="s2">"Filter"</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">"Occasion"</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="s2">"After"</span><span class="p">:</span> <span class="s2">"2016-09-08T07:09:44.042Z"</span><span class="p">,</span>
+                            <span class="s2">"Before"</span><span class="p">:</span> <span class="s2">"2016-09-08T07:09:44.042Z"</span><span class="p">,</span>
+                            <span class="s2">"ArenaIds"</span><span class="p">:</span> <span class="p">[</span>
+                              <span class="s2">"cbis:12345"</span>
+                            <span class="p">]</span>
+                       <span class="p">}</span>
                     <span class="p">},</span>
                     <span class="s2">"SubQuery"</span><span class="p">:</span> <span class="p">{}</span>  
                   <span class="p">}</span>
@@ -5195,13 +5215,17 @@ Products included in the geographic box will be returned.</p>
 </code></pre>
 
 <p>Order products by the supplied field.
-Supported fields are:
-Name 
-Id 
-ExpiresAt 
-PublishAt
-ProductIds (follow order from array of ids in ProductIds field) 
-Occasions</p>
+Supported fields are:</p>
+
+<ul>
+<li>Name </li>
+<li>Id </li>
+<li>ExpiresAt </li>
+<li>PublishAt</li>
+<li>ProductIds (follow order from array of ids in ProductIds field) </li>
+<li>Occasions</li>
+<li>Information (need to supply AttributeId)</li>
+</ul>
 
 <h3 id="sort-object">Sort Object</h3>
 
@@ -5221,6 +5245,11 @@ Occasions</p>
 <td>Order</td>
 <td>Order</td>
 <td>Either <code class="prettyprint">Asc</code> or <code class="prettyprint">Desc</code></td>
+</tr>
+<tr>
+<td>AttributeId</td>
+<td>int</td>
+<td>The attribute id of the information field you want to sort on</td>
 </tr>
 </tbody></table>
 
@@ -5250,10 +5279,13 @@ Occasions</p>
 <p>We provide Webhooks (<a href="https://en.wikipedia.org/wiki/Webhook">Wikipedia</a>) for your API keys on demand. 
 Contact our <a href="http://help.citybreak.com/">support</a> if you wish to use this option.</p>
 
-<p>We support the following authentication methods:
- * Basic Authentication
- * Cusom Header Authentication
- * No authentication</p>
+<p>We support the following authentication methods:</p>
+
+<ul>
+<li>Basic Authentication</li>
+<li>Cusom Header Authentication</li>
+<li>No authentication</li>
+</ul>
 
 <p>We also handle automatic retries if your endpoint is unavailable.</p>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
