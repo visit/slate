@@ -723,6 +723,7 @@ Supported fields are:
 * ProductIds (follow order from array of ids in ProductIds field) 
 * Occasions
 * Information (need to supply AttributeId)
+* Position (need to supply Latitude & Longitude)
 
 ### Sort Object
 
@@ -731,6 +732,8 @@ Parameter | Type | Description
 Field | string | Name of the field you want to order by.
 Order | Order | Either `Asc` or `Desc`
 AttributeId | int | The attribute id of the information field you want to sort on
+Latitude | double | The latitude of the reference point to sort on position
+Longitude | double | The longitude of the reference point to sort on position
 
 ### Paging
 Parameter | Type | Description
