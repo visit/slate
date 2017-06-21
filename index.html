@@ -153,6 +153,94 @@ If you don&rsquo;t have an API key, visit <a href='http://help.citybreak.com/'>C
 You must replace <code>APIKEY132456789EWOK</code> with your personal API key.
 </aside>
 
+          <h1 id="language">Language</h1>
+
+<blockquote>
+<p>Language </p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="s2">"en-us"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fr-fr"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sv-se"</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+
+<h2 id="get-languages">Get Languages</h2>
+<pre class="highlight shell"><code>curl -X GET 
+  --header <span class="s1">'ApiKey: APIKEY132456789EWOK'</span>
+  --header <span class="s1">'Accept: application/json'</span> 
+  <span class="s1">'https://cbis-rest-api.citybreak.com/v1/api/language'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://cbis-rest-api.citybreak.com/v1/api/language"</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"ApiKey:"</span> <span class="s2">"APIKEY132456789EWOK"</span><span class="p">,</span>
+    <span class="s2">"Accept"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">}</span>  
+<span class="p">});</span>
+</code></pre>
+
+<blockquote>
+<p>Example of response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="s2">"en-us"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fr-fr"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sv-se"</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+
+<p>Get the available languages for the key.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://cbis-rest-api.citybreak.com/v1/api/language</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<p>None</p>
+
+<h2 id="check-if-available">Check If Available</h2>
+<pre class="highlight shell"><code>curl -X GET 
+  --header <span class="s1">'ApiKey: APIKEY132456789EWOK'</span>
+  --header <span class="s1">'Accept: application/json'</span> 
+  <span class="s1">'https://cbis-rest-api.citybreak.com/v1/api/language/{culture}'</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://cbis-rest-api.citybreak.com/v1/api/language/{culture}"</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"ApiKey:"</span> <span class="s2">"APIKEY132456789EWOK"</span><span class="p">,</span>
+    <span class="s2">"Accept"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">}</span>  
+<span class="p">});</span>
+</code></pre>
+
+<blockquote>
+<p>Example of response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="kc">true</span><span class="w">
+</span></code></pre>
+
+<p>Returns true if culture is available, false otherwise.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://cbis-rest-api.citybreak.com/v1/api/language/{culture}</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>culture</td>
+<td>The culture to look for.</td>
+</tr>
+</tbody></table>
+
           <h1 id="raw-attribute">Raw Attribute</h1>
 
 <blockquote>
