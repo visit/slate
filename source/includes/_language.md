@@ -1,15 +1,5 @@
 # Language
 
-> Language 
-
-```json
-[
-  "en-us",
-  "fr-fr",
-  "sv-se"
-]
-```
-
 ## Get Languages
 
 ```shell
