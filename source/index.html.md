@@ -12,6 +12,7 @@ toc_footers:
 includes:
   - intro
   - auth
+  - language
   - rawattribute
   - rawpoi
   - rawgeo
